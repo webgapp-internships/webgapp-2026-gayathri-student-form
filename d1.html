@@ -1,23 +1,65 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <title>form</title>
+        <title>details</title>
+        <style>
+           h1
+           {
+            text-align: center;
+            color: darkblue;
+        }
+                .form-box{
+            width: 700px;
+            padding: 30px;
+            margin: 50px auto;
+            box-shadow: 0PX 0PX 10PX plum;
+                }
+        input[type="submit"]
+        {
+            background-color: cornflowerblue;
+            padding:10px;
+            margin:10px auto;
+            box-shadow: 0px 0px 10px blue;
+        }
+        </style>
     </head>
     <body>
-        <h1><centre>STUDENT DETAILS</centre></h1>
-<form action="submit.html" method="post">
-        <label>Name :</label>
+        <div class="form-box">
+        <h1>COLLEGE RESITRATION FORM</h1>
+     <form action="sub.html" method="post">
+        <label>Name </label><br>
         <input type="text" username="name"><br><br>
-        <label>Course :</label>
-        <input type="text" username="Course"><br><br>
-        <label>Email Id :</label>
-        <input type="text" username="email"><br><br>
-        <label>Moblie_ no:</label>
+         <label>Reg No </label><br>
+        <input type="text" username="Regno"><br><br>
+        <label>Course </label><br>
+         <select>
+            <option>B.A(Tam)</option>
+             <option>B.A(Eng)</option>
+              <option>B.Sc(Maths)</option>
+               <option>B.Sc(HMCS)</option>
+                <option>B.Sc(IT)</option>
+                 <option>B.SC(CS)</option>
+                  <option>B.Com</option>
+         </select><br><br>
+        <label>Gender</label><br>
+        <input type="radio" id="Female">
+         <label for="Female">Female</label><br>
+        <input type="radio" id="Male">
+         <label for="Male">Male</label><br><br>
+        <label>Email Id </label><br>
+        <input type="email" username="email"><br><br>
+        <label>Password</label><br>
+        <input type="password" username="password"><br><br>
+        <label>Moblie No</label><br>
         <input type="number" username="moblie"><br><br>
-        <label>Date of Birth:</label>
+        <label>Date of Birth</label><br>
         <input type="date" username="date"><br><br>
-        <input type="submit" name="submit" value="sumbit">
-
+         <label>Father's Name </label><br>
+        <input type="text" username="fname"><br><br>
+         <label>Address </label><br>
+        <textarea name="address" rows="5" cols="20"></textarea><br><br>
+        <input type="submit" name="submit" value="SUBMIT">
     </form>
+        </div>
     </body>
 </html>
