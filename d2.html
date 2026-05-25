@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Shop</title>
+
+<style>
+
+.header-container{
+    background-color: rgb(98, 145, 98);
+    display:flex;
+    align-items:center;
+    gap:20px;
+}
+
+.logo{
+    width:300px;
+    height:300px;
+}
+
+.content{
+    flex:1;
+}
+
+h1{
+    color:rgb(5, 128, 58);
+    font-size:50px;
+    text-shadow: 0px 0px 10px lightgreen;
+    text-align: center;
+}
+
+ nav a{
+    text-decoration:none;
+    color:black;
+    margin-right:15px;
+    font-weight:bold;
+}
+
+p{
+    margin-top:20px;
+    font-size:18px;
+}
+
+.footer-section{
+    display: flex;
+    justify-content: space-around;
+    margin-top: 30px;
+}
+
+.about,
+.contact{
+    width: 40%;
+    padding: 15px;
+    border: 3px solid green;
+    border-radius: 10px;
+    box-shadow: 0px 0px 10px lightgreen;
+}
+
+h2{
+    color: green;
+}
+.sect{
+    text-align: center;
+    padding: 50px;
+    background-color: honeydew;
+    font-style: italic;
+}
+    .container{
+    display:flex;
+    gap:30px;
+    justify-content:center;
+    flex-wrap:wrap;
+}
+
+.card{
+    border:2px solid green;
+    width:400px;
+    text-align:center;
+    padding:10px;
+    border-radius:10px;
+}
+
+.card img{
+    width:300px;
+    height:200px;
+}
+
+.price{
+    color:red;
+    font-weight:bold;
+    font-size:20px;
+}
+
+}
+</style>
+</head>
+
+<body>
+
+<div class="header-container">
+
+    <div>
+        <img src="veg.jpg" class="logo" alt="Vegetable Logo">
+    </div>
+<center>
+    <div class="content">
+        <h1>🧺 Green Garden Vegetables 🧺</h1><br>
+<nav>
+        <a onclick="showHome()" >Home</a>
+        <a onclick="showabout()" >About</a>
+        <a onclick="showpricedetails()" >Price details</a>
+        
+        </nav>
+    </div>
+</center>
+</div>
+<div class="sect" id="display">
+<p>
+🌿 Our vegetable shop provides fresh, organic, and high-quality vegetables directly from local farms. We ensure that every vegetable is carefully selected to maintain freshness and nutrition. 🌿
+</p><br><br>
+        <img src="beroot.jpg" class="logo"  heigth="300px" width="300px ">
+        <img src="cab.jpg" class="logo"  heigth="300px" width="300px " >
+        <img src="cali.jpg" class="logo"  heigth="300px" width="300px ">
+         <img src="gar.jpg" class="logo"  heigth="300px" width="300px ">
+          <img src="ll.jpg" class="logo"  heigth="300px" width="300px ">
+           <img src="pot.jpg" class="logo"  heigth="300px" width="300px ">
+            <img src="p2.avif" class="logo"  heigth="300px" width="300px ">
+             <img src="p3.avif" class="logo"  heigth="300px" width="300px ">
+<br><br>
+</div>
+<div class="footer-section">
+ © 2026 Green Garden Vegetables | All Rights Reserved
+ </div>
+<script>
+    function showHome()
+    {
+        document.getElementById("display").innerHTML = `
+        <h1>Welcome to Green Garden Vegetables🙏🏻</h1>
+</center>
+<p><b>
+Welcome to Green Garden Vegetables, your trusted destination for fresh and healthy vegetables.
+We provide farm-fresh vegetables that are carefully selected to ensure the best quality and nutrition.
+</b>
+</p>
+
+<h2>Our Special Features</h2>
+
+<ul>
+    <li>Fresh vegetables delivered daily</li>
+    <li>High quality and hygienic products</li>
+    <li>Affordable prices</li>
+    <li>Wide variety of vegetables</li>
+    <li>Friendly customer service</li>
+</ul>
+`;
+
+    }
+
+     function showpricedetails()
+    {
+        document.getElementById("display").innerHTML = `
+
+        <h1>🥕 Vegetable Price Details 🥕</h1>
+
+<div class="container">
+
+    <div class="card">
+        <img src="p2.avif" alt="Tomato">
+        <h3>🍅 Tomato</h3>
+        <p class="price">₹40 / kg</p>
+    </div>
+
+    <div class="card">
+        <img src="p3.avif" alt="Carrot">
+        <h3>🥕 Carrot</h3>
+        <p class="price">₹60 / kg</p>
+    </div>
+
+    <div class="card">
+        <img src="pot.jpg" alt="Potato">
+        <h3>🥔 Potato</h3>
+        <p class="price">₹35 / kg</p>
+    </div>
+
+    <div class="card">
+        <img src="cab.jpg" alt="Onion">
+        <h3>🥬cabage</h3>
+        <p class="price">₹45 / kg</p>
+    </div>
+      <div class="card">
+        <img src="cali.jpg" alt="Onion">
+        <h3>🥦Cauliflower</h3>
+        <p class="price">₹60 / kg</p>
+    </div>
+
+     <div class="card">
+        <img src="cc.jpg" alt="Onion">
+        <h3> 🫑Capsicum</h3>
+        <p class="price">₹85 / kg</p>
+    </div>
+</div>
+
+    `;
+}
+ function showabout()
+    {
+        document.getElementById("display").innerHTML = `
+         <div class="about">
+        <h2>About Us</h2>
+        <p>
+            Green Garden Vegetables provides fresh and healthy vegetables
+            directly from local farms. We ensure quality and freshness
+            in every product.
+        </p>
+    </div><br>
+    <br>
+
+    <div class="contact">
+        <h2>Contact Us</h2>
+        <p>
+            📍 Chennai, Tamil Nadu<br>
+            📞 +91 9876543210<br>
+            📧 greengarden@gmail.com
+        </p>
+    </div>
+</div>
+</div>
+`;
+    }
+ 
+</script>
+</body>
+</html>
