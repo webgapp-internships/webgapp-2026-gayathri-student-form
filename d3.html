@@ -1,0 +1,331 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Employee Attendance</title>
+<style>
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:Segoe UI, sans-serif;
+}
+
+body{
+    background:grey;
+    padding:20px 40px;
+}
+
+.header{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    margin-bottom:30px;
+}
+
+.header h1{
+    color:#142850;
+    font-size:48px;
+}
+
+.btn{
+    background:#1a73e8;
+    color:white;
+    border:none;
+    padding:12px 20px;
+    border-radius:8px;
+    cursor:pointer;
+    font-size:18px;
+}
+
+.cards{
+    display:grid;
+    grid-template-columns:repeat(4,1fr);
+    gap:25px;
+    margin-bottom:25px;
+}
+
+.card{
+    color:white;
+    border-radius:20px;
+    padding:25px;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    box-shadow:0 5px 15px rgba(0,0,0,.15);
+}
+
+.card h3{
+    font-size:18px;
+    font-weight:500;
+    margin-bottom:10px;
+}
+
+.card h2{
+    font-size:55px;
+}
+
+.card i{
+    font-size:55px;
+    opacity:.8;
+}
+
+.blue{
+    background:linear-gradient(135deg,#1e3c72,#2a5298);
+}
+
+.green{
+    background:linear-gradient(135deg,#16a085,#38ef7d);
+}
+
+.red{
+    background:linear-gradient(135deg,#d72638,#ff4b2b);
+}
+
+.orange{
+    background:linear-gradient(135deg,#ff8c00,#f9c332);
+}
+
+.large-cards{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:25px;
+    margin-bottom:40px;
+}
+
+.large-card{
+    color:white;
+    border-radius:20px;
+    padding:25px;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    box-shadow:0 5px 15px rgba(0,0,0,.15);
+}
+
+.large-card h3{
+    font-size:18px;
+    font-weight:500;
+    margin-bottom:10px;
+}
+
+.large-card h2{
+    font-size:55px;
+}
+
+.large-card i{
+    font-size:55px;
+    opacity:.8;
+}
+
+.purple{
+    background:linear-gradient(135deg,#7b5fc0,#e5a5c6);
+}
+
+.navy{
+    background:linear-gradient(135deg,#0f172a,#1f3a5f);
+}
+
+.bottom{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:25px;
+}
+
+.panel{
+    background:white;
+    border-radius:20px;
+    padding:25px;
+    box-shadow:0 5px 15px rgba(0,0,0,.08);
+}
+
+.panel h2{
+    margin-bottom:25px;
+    color:#222;
+}
+
+.alert-title{
+    color:#e63946;
+}
+
+.list-item{
+    padding:18px 0;
+    border-bottom:1px solid #e5e5e5;
+    font-size:22px;
+}
+
+.list-item:last-child{
+    border:none;
+}
+
+.time{
+    color:#4f86f7;
+}
+
+strong{
+    color:#222;
+}
+
+@media(max-width:1000px){
+
+.cards{
+    grid-template-columns:repeat(2,1fr);
+}
+
+.large-cards,
+.bottom{
+    grid-template-columns:1fr;
+}
+
+}
+
+@media(max-width:700px){
+
+.cards{
+    grid-template-columns:1fr;
+}
+
+.header{
+    flex-direction:column;
+    gap:15px;
+}
+
+.header h1{
+    font-size:32px;
+}
+
+}
+
+</style>
+</head>
+
+<body>
+
+<div class="header">
+    <h1>Employee Attendance Dashboard</h1>
+
+    <button class="btn">
+        <i class="fa-solid fa-download"></i>
+        Export Report
+    </button>
+</div>
+
+<div class="cards">
+
+    <div class="card blue">
+        <div>
+            <h3>Total Employees</h3>
+            <h2>230</h2>
+        </div>
+        <i class="fa-solid fa-users"></i>
+    </div>
+
+    <div class="card green">
+        <div>
+            <h3>Present Today</h3>
+            <h2>1</h2>
+        </div>
+        <i class="fa-solid fa-circle-check"></i>
+    </div>
+
+    <div class="card red">
+        <div>
+            <h3>Absent Today</h3>
+            <h2>1</h2>
+        </div>
+        <i class="fa-solid fa-circle-xmark"></i>
+    </div>
+
+    <div class="card orange">
+        <div>
+            <h3>Active Projects</h3>
+            <h2>18</h2>
+        </div>
+        <i class="fa-solid fa-table-columns"></i>
+    </div>
+
+</div>
+
+<div class="large-cards">
+
+    <div class="large-card purple">
+        <div>
+            <h3>Violations Today</h3>
+            <h2>12</h2>
+        </div>
+        <i class="fa-solid fa-triangle-exclamation"></i>
+    </div>
+
+    <div class="large-card navy">
+        <div>
+            <h3>Tasks Due Today</h3>
+            <h2>34</h2>
+        </div>
+        <i class="fa-solid fa-list"></i>
+    </div>
+
+</div>
+
+<div class="bottom">
+
+    <div class="panel">
+
+        <h2>
+            <i class="fa-regular fa-clock"></i>
+            Recent Check-ins Feed
+        </h2>
+
+        <div class="list-item">
+            <strong>Vanathaiyan Vincent</strong>
+            checked in at
+            <span class="time">9 a.m.</span>
+        </div>
+
+        <div class="list-item">
+            <strong>Rajarethinam Balaji</strong>
+            checked in at
+            <span class="time">9 a.m.</span>
+        </div>
+
+        <div class="list-item">
+            <strong>Sekar Narayanasamy</strong>
+            checked in at
+            <span class="time">9 a.m.</span>
+        </div>
+
+        <div class="list-item">
+            <strong>Ramaiah Murugesan</strong>
+            checked in at
+            <span class="time">9 a.m.</span>
+        </div>
+
+    </div>
+
+    <div class="panel">
+
+        <h2 class="alert-title">
+            <i class="fa-solid fa-bell"></i>
+            Violation Alerts
+        </h2>
+
+        <div class="list-item">
+            <strong>John</strong>
+            late check-in detected.
+        </div>
+
+        <div class="list-item">
+            <strong>David</strong>
+            geo-fence violation.
+        </div>
+
+        <div class="list-item">
+            <strong>Ramesh</strong>
+            missing check-out.
+        </div>
+
+    </div>
+
+</div>
+
+</body>
+</html>

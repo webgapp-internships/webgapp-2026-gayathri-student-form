@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Employee Attendance</title>
+<link rel="stylesheet"
+href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+<style>
+
+body{
+    padding:20px 40px;
+    background-color:aliceblue;
+}
+
+.header{
+
+    margin-bottom:30px;
+    color:#142850;
+    font-size:20px;
+}
+.btn
+{
+    padding:20px;
+    float:right;
+    background-color: skyblue;
+    color:black;
+    box-shadow: 0px 0px 10px white;
+    cursor: pointer;
+    border-radius: 30px;
+    
+}
+.container
+{
+    display: flex;
+    gap: 30px;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+.box{
+    background-color: rgb(14, 97, 97);
+    padding:40px;
+    box-sizing: content-box;
+    border-radius: 30px;
+     box-shadow: 0px 0px 10px rgb(23, 77, 59);
+    color:white;
+
+}
+
+
+.box1{
+    background-color:palevioletred;
+    box-sizing: content-box;
+    padding:40px;
+     border-radius: 30px;
+    box-shadow: 0px 0px 10px palevioletred;
+    color:white;
+}
+.box2{
+    background-color:rgb(107, 47, 107);
+    box-sizing: content-box;
+    padding:40px;
+    border-radius: 30px;
+     box-shadow: 0px 0px 10px rgb(184, 141, 184);
+     color:white;
+
+}
+.box3{
+    background-color:darkslateblue;
+    box-sizing: content-box;
+    padding:40px;
+    border-radius: 30px;
+     box-shadow: 0px 0px 10px rebeccapurple;
+     color:white;
+
+}
+.box4{
+    background-color:rgb(165, 206, 126);
+    box-sizing: content-box;
+    padding:60px;
+    border-radius: 30px;
+     box-shadow: 0px 0px 10px rgb(78, 170, 24);
+     width:350px;
+    height: 100px;
+    justify-content: center;
+    color:white;
+
+}
+.box5{
+    background-color:rgb(202, 160, 70);
+    box-sizing: content-box;
+    padding:60px;
+    border-radius: 30px;
+     box-shadow: 0px 0px 10px rgb(199, 202, 10);
+    width:350px;
+    height: 100px;
+    justify-content: center;
+     color:white;
+
+}
+.box6{
+    background-color:whitesmoke;
+    padding:50px;
+    border-radius: 30px;
+     box-shadow: 0px 0px 10px rgb(20, 20, 19);
+    width:500px;
+    text-align: center;
+
+
+}
+.box7{
+    background-color:whitesmoke;
+     text-align: center;
+    padding:50px;
+    border-radius: 30px;
+     box-shadow: 0px 0px 10px rgb(20, 20, 19);
+    width:500px;
+    
+}
+.time{
+    color:blue ;
+}
+
+
+</style>
+</head>
+<body>
+    <div class="header">
+        <h1>Employee Attendance<button class="btn"><i class="fa-solid fa-download" style="color: #142850; float:right;"></i>Export Report</button></h1>
+    </div>
+    <div class="container">
+<div class="box">
+    <h2><b>Empolyee Total</b><i class="fa-solid fa-users" style="color:blue;  float:right;"></i></h2>
+    <h3>250</h3>
+</div>
+<div class="box1">
+    <h2><b>Employee Present</b><i class="fa-solid fa-circle-check" style="color:green;  float:right;"></i>
+    </h2>
+    <h3>244</h3>
+</div>
+<div class="box2">
+<h2><b>Employee Absent</b><i class="fa-solid fa-circle-xmark" style="color:red; float:right;"></i></h2>
+    <h3>6</h3>
+</div>
+<div class="box3">
+    <h2><b>Active Projects</b><i class="fa-solid fa-chart-line" style="color:chocolate; float:right;"></i></h2>
+    <h3>67</h3>
+</div>
+<div class="box4">
+    <h2><b>Violations Today<i class="fa-solid fa-triangle-exclamation" style="color:red;  float:right;"></i></b></h2>
+    <h3>11</h3>
+</div>
+
+<div class="box5">
+    <h2><b>Tasks Due Today</b><i class="fa-solid fa-list" style="float:right;"></i></h2>
+    <h3>35</h3>
+</div>
+<div class="box6">
+    <h2><i class="fa-solid fa-clock" style="size:large;"></i><b>Recetn Check ins feed</b></h2>
+    <h3>Dharshini checked in at <span class="time">9:00Am.</span></h3><hr>
+     <h3>Dviya checked in at <span class="time">9:00Am.</span></h3><hr>
+      <h3>Shiva checked in at <span class="time">9:00Am.</span></h3><hr>
+       <h3>Diya checked in at <span class="time">9:00Am.</span></h3><hr>
+</div>
+<div class="box7">
+    <h2><i class="fa-solid fa-bell" style="color:rgb(199, 199, 28);"></i><b> Violaion Alerts</b></h2>
+    <h3>Mary late chect in detected.</h3><hr>
+    <h3>Rajiv gro fance violation.</h3><hr>
+    <h3>Athi missing check out.</h3><hr>
+    
+</div>
+
+    </div>
+</body>
+</html>
