@@ -16,10 +16,11 @@
                 }
         input[type="submit"]
         {
-            background-color: cornflowerblue;
-            padding:10px;
-            margin:10px auto;
-            box-shadow: 0px 0px 10px blue;
+            background-color: rgb(151, 174, 216);
+            padding:20px;
+            margin:20px auto;
+            box-shadow: 0px 0px 10px rgb(128, 128, 145);
+            border-radius:10px;
         }
                 .container
         {
@@ -71,13 +72,13 @@
        </nav>  
     </div>
         <div class="form-box" >
-        <h1>COLLEGE RESITRATION FORM</h1>
+         <h1>COLLEGE REGISTRATION FORM</h1>
      <form action="sub.html" method="post">
-        <label>Name </label><br>
-        <input type="text" username="name"><br><br>
-         <label>Reg No </label><br>
-        <input type="text" username="Regno"><br><br>
-        <label>Course </label><br>
+        <label>Name <span style="color:red;">*</span></label><br>
+        <input type="text" name="name" required><br><br>
+         <label>Reg No<span style="color:red;">*</span> </label><br>
+        <input type="text" username="Regno" required><br><br>
+        <label>Course<span style="color:red;">*</span> </label><br>
          <select>
             <option>B.A(Tam)</option>
              <option>B.A(Eng)</option>
@@ -87,23 +88,29 @@
                  <option>B.SC(CS)</option>
                   <option>B.Com</option>
          </select><br><br>
-        <label>Gender</label><br>
-        <input type="radio" id="Female">
+        <label>Gender<span style="color:red;">*</span></label><br>
+        <input type="radio" id="Female" required>
          <label for="Female">Female</label><br>
-        <input type="radio" id="Male">
+        <input type="radio" id="Male" required>
          <label for="Male">Male</label><br><br>
-        <label>Email Id </label><br>
-        <input type="email" username="email"><br><br>
-        <label>Password</label><br>
-        <input type="password" username="password"><br><br>
+        <label>Email Id <span style="color:red;">*</span></label><br>
+        <input type="email" username="email" required><br><br>
+        <label>Password<span style="color:red;">*</span></label><br>
+        <input type="password" username="password" required><br><br>
         <label>Moblie No</label><br>
-        <input type="number" username="moblie"><br><br>
-        <label>Date of Birth</label><br>
-        <input type="date" username="date"><br><br>
-         <label>Father's Name </label><br>
-        <input type="text" username="fname"><br><br>
-         <label>Address </label><br>
-        <textarea name="address" rows="5" cols="20"></textarea><br><br>
+         <input type="tel" name="mobile" pattern="[0-9]{10}" maxlength="10" required><br><br>
+        <label>Date of Birth<span style="color:red;">*</span></label><br>
+        <input type="date" username="date" required><br><br>
+         <label>Father's Name<span style="color:red;">*</span></label><br>
+        <input type="text" name="fathername" required><br><br>
+        <label>Mother's Name<span style="color:red;">*</span></label><br>
+        <input type="text" name="mothername" required><br><br>
+        <label>Parent Mobile Number<span style="color:red;">*</span></label><br>
+        <input type="tel"  name="parentmobile"  pattern="[0-9]{10}"required><br><br>  
+         <label>Aadhaar Number<span style="color:red;">*</span></label><br>
+        <input type="text"name="aadhaar" pattern="[0-9]{12}" maxlength="12" required><br><br>
+        <label>Address<span style="color:red;">*</span></label><br>
+        <textarea name="address"rows="5"cols="20"required placeholder="Enter your full address"></textarea><br><br>
         <input type="submit" name="submit" value="SUBMIT">
     </form>
         </div>
@@ -112,6 +119,5 @@
     <h3>© 2026 Sri Kaliswari College | Sivakasi</h3>
 
 </div>
-
     </body>
 </html>
