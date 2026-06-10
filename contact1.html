@@ -5,9 +5,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
  <style>
-        .container
+                .container
         {
-           background-color: rgb(168, 224, 168);
+           background-color:darkslateblue;
            display:flex;
            gap:20px;
         
@@ -15,10 +15,12 @@
         .content{
             flex:1;
             text-align: center;
-            color:darkblue;
+            color:white;
+            height:150px;
+            width: 200px;
         }
         .navy{
-            background-color:darkcyan ;
+            background-color:royalblue ;
             text-align: center;
             padding:20px;
         
@@ -62,12 +64,20 @@
         .title{
             color:darkblue;
         }
+        
 .footer{
-    background-color:darkcyan;
+    background-color:rgb(36, 25, 110);
     color:white;
     text-align:center;
     padding:15px;
     margin-top:40px;
+}
+#sliderImage{
+    width:90%;
+    height:450px;
+    object-fit:cover;
+    border-radius:50px;
+    padding:30px;
 }
      </style>
 </head>
@@ -76,7 +86,7 @@
     <img src="clg.jpg" alt="college logo">
     
     <div class="content">
-        <h1>SRI KALISWARI COLLEGE</h1>
+        <h1>DIVDHAAR ARTS AND SCENCE COLLEGE</h1>
     </div>
     </div>
     <div class="navy">
@@ -87,33 +97,54 @@
         <a href="d1.html">APPLICATION FORM</a>
        </nav>  
     </div>
+        <div class="slider">
+    <img id="sliderImage" src="campus1.jpg">
+</div>
+
+    <script>
+let images = [
+    "campus3.jpg",
+    "campus4.jpg",
+    "campus5.jpg","campus6.jpg"
+];
+
+let index = 0;
+
+setInterval(function() {
+    index = (index + 1) % images.length;
+    document.getElementById("sliderImage").src = images[index];
+}, 3000);
+</script>
+
+
    <div class="box-container">
    <div class="box">
     <h1 class="title">Address </h1>
-    <h2>Sri Kaliswari College (Autonomous)</h2>
-    <h2>Virudhunagar Main Road, Anaikuttam</h2>
-    <h2>Sivakasi – 626 130,</h2>
-    <h2>Virudhunagar(Dist),</h2>
+    <h2>Divdhar Atrs and Science College🎓</h2>
+    <h2>Ooty Main Road, Udhayamangalam</h2>
+    <h2>Ooty – 643001,</h2>
+    <h2>Nilgiris District,</h2>
     <h2>Tamilnadu</h2>  
 </div>
 <div class="box">
      <h1 class="title">Contact No’s</h1>
     <h2>(04562) 232648,</h2>
-    <h2>(04562) 232264,</h2>
-    <h2>(+91) 9487487825</h2>
+    <h2>(+91)93842435912,</h2>
+    <h2>(+91) 9626427179</h2>
 </div>
 <div class="box">
      <h1 class="title">Fax</h1>
     <h2>(04562) 232648,</h2><hr>
     <h1 class="title">Email</h1>
-    <h2>kaliswaricollege@gmail.com</h2>
+    <h2>divdharcollge07@gmail.com</h2>
 
 
 </div>
 </div>
+
 <div class="footer">
 
-    <h3>© 2026 Sri Kaliswari College | Sivakasi</h3>
+    <h3>© 2026 Divdhar Arts and Science College | Ooty</h3>
 
 </div>
    

@@ -14,7 +14,7 @@ class Result extends Student {
         console.log("Student Name :", this.name);
         console.log("Mark         :", this.mark);
         console.log("Result       :", this.checkResult());
-        console.log("----------------------");
+        console.log("~~~~~~~~~~~~~~~~~~~~~~~~~");
     }
 }
 

@@ -18,7 +18,7 @@ console.log(stud("sree is studying","IT department","at 18yrs Old"))
 
 
 
-inhertiance code
+//inhertiance code
 
 //Parent Class
 class Department {
