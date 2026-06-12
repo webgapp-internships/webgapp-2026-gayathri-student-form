@@ -1,80 +1,855 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-    <title>Student</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Divdhar Arts and Science College</title>
 
-    <style>
+<style>
+body{
+    margin:0;
+    font-family:Arial;
+    background:#f4f6f9;
+}
 
-        body{
-            margin:0;
-            padding:0;
-            background-color:rgb(7, 40, 68);
-            display:flex;
-            justify-content:center;
-            align-items:center;
-            height:700px;
-        }
+/* HEADER */
+.container{
+    background-color:darkslateblue;
+    display:flex;
+    align-items:center;
+    gap:20px;
+    padding:10px;
+    color:white;
+}
 
-        .login-box{
-            width:350px;
-            background:rgb(8, 40, 109);
-            padding:40px;
-            text-align:center;
-            box-shadow:0px 0px 10px rgba(63, 190, 207, 0.2);
-        }
+.log{
+    width:120px;
+    height:120px;
+}
 
-        .logo{
-            width:222px;
-            margin-bottom:1px;
-        }
+/* NAVBAR */
+.navy{
+    background-color:royalblue;
+    text-align:center;
+    padding:15px;
+    position:sticky;
+    top:0;
+}
 
-        h2{
-            margin-top:0;
-            color:rgb(228, 228, 236);
-        }
+.navy a{
+    color:white;
+    text-decoration:none;
+    margin:15px;
+    font-weight:bold;
+}
 
-        .text{
-            color:gray;
-        
-        }
+/* PAGE SECTIONS */
+.page{
+    display:none;
+    width:90%;
+    margin:30px auto;
+    background:white;
+    padding:30px;
+    border-radius:15px;
+    box-shadow:0px 0px 10px rgba(0,0,0,0.2);
+}
 
-        input{
-            width:100%;
-            padding:15px;
-            margin-bottom:20px;
-            border:1px solid #555;
-            font-size:18px;
-            box-sizing:border-box;
-        }
+.active{
+    display:block;
+}
+h2{
+    color:darkblue;
+    text-align:center;
+}
 
-        .btn{
-            width:100%;
-            padding:14px;
-            background:rgb(33, 130, 221);
-            color:white;
-            border:none;
-            font-size:20px;
-            cursor:pointer;
-            margin-bottom:20px;
-        }
-    </style>
+p{
+    line-height:1.8;
+    font-size:18px;
+    text-align:justify;
+}
+
+/* FOOTER */
+.footer{
+    background-color:rgb(36, 25, 110);
+    color:white;
+    text-align:center;
+    padding:15px;
+    margin-top:40px;
+}
+
+/* SLIDER */
+#sliderImage{
+    width:100%;
+    height:400px;
+    object-fit:cover;
+    border-radius:20px;
+}
+
+/* INPUT */
+input,textarea{
+    width:100%;
+    padding:10px;
+    margin:10px 0;
+}
+button{
+    padding:10px 20px;
+    background:royalblue;
+    color:white;
+    border:none;
+}
+.form-box{
+    width:90%;
+    max-width:600px;
+    margin:auto;
+    padding:30px;
+    background:rgba(255,255,255,0.12);
+    backdrop-filter:blur(10px);
+    border-radius:20px;
+    box-shadow:0 8px 30px rgba(0,0,0,0.3);
+    color:white;
+}
+
+/* labels */
+.form-box label{
+    display:block;
+    margin-top:10px;
+    margin-bottom:5px;
+    color:white;
+    font-weight:bold;
+}
+
+/* inputs */
+.form-box input,
+.form-box select,
+.form-box textarea{
+    width:100%;
+    padding:12px;
+    border:none;
+    border-radius:8px;
+    margin-bottom:10px;
+    outline:none;
+}
+
+/* button */
+.form-box button{
+    width:100%;
+    padding:12px;
+    background:#0059b3;
+    color:white;
+    border:none;
+    border-radius:8px;
+    font-size:16px;
+    cursor:pointer;
+    transition:0.3s;
+}
+
+.form-box button:hover{
+    background:#003366;
+}
+
+/* message */
+#msg{
+    text-align:center;
+    margin-top:10px;
+    font-weight:bold;
+    color:#e6f2ff;
+}
+
+/* background for admission page */
+#application{
+    background:linear-gradient(135deg,#003366,#66b3ff);
+    padding:40px;
+}
+.sports-container{
+    display:flex;
+    flex-wrap:wrap;
+    gap:20px;
+    justify-content:center;
+    margin-top:20px;
+}
+
+.sport-card{
+    width:260px;
+    background:linear-gradient(135deg,#003366,#66b3ff);
+    border-radius:15px;
+    overflow:hidden;
+    box-shadow:0 8px 20px rgba(0,0,80,0.3);
+    transition:0.4s;
+    color:white;
+    text-align:center;
+}
+
+.sport-card img{
+    width:100%;
+    height:160px;
+    object-fit:cover;
+}
+
+.sport-card h3{
+    margin:10px 0;
+    color:white;
+}
+
+.sport-card p{
+    font-size:14px;
+    padding:0 10px 15px;
+    color:#e6f2ff;
+}
+
+.sport-card:hover{
+    transform:translateY(-10px);
+    box-shadow:0 12px 25px rgba(0,0,0,0.4);
+}
+
+/* HIGHLIGHTS BOX */
+.achievement-box{
+    width:85%;
+    margin:auto;
+    padding:25px;
+    background:rgba(0,51,102,0.9);
+    border-radius:15px;
+    color:white;
+    box-shadow:0 5px 15px rgba(0,0,0,0.3);
+}
+
+.achievement-box ul{
+    line-height:2;
+    font-size:18px;
+}
+.course-container{
+    display:flex;
+    flex-wrap:wrap;
+    gap:20px;
+    justify-content:center;
+    margin-top:20px;
+}
+
+.course-card{
+    width:260px;
+    background:linear-gradient(135deg,#003366,#66b3ff);
+    border-radius:15px;
+    overflow:hidden;
+    box-shadow:0 8px 20px rgba(0,0,80,0.3);
+    transition:0.4s;
+    color:white;
+    text-align:center;
+}
+
+.course-card img{
+    width:100%;
+    height:160px;
+    object-fit:cover;
+}
+
+.course-card h4{
+    margin:10px 0;
+    color:white;
+}
+
+.course-card p{
+    font-size:14px;
+    padding:0 10px 15px;
+    color:#e6f2ff;
+}
+
+.course-card:hover{
+    transform:translateY(-10px);
+    box-shadow:0 12px 25px rgba(0,0,0,0.4);
+}
+.contact-container{
+    display:flex;
+    flex-wrap:wrap;
+    gap:20px;
+    justify-content:center;
+    margin-top:20px;
+}
+
+.contact-card{
+    width:260px;
+    background:linear-gradient(135deg,#003366,#66b3ff);
+    border-radius:15px;
+    overflow:hidden;
+    box-shadow:0 8px 20px rgba(0,0,80,0.3);
+    transition:0.4s;
+    color:white;
+    text-align:center;
+}
+
+.contact-card img{
+    width:100%;
+    height:160px;
+    object-fit:cover;
+}
+
+.contact-card h3{
+    margin:10px 0;
+}
+
+.contact-card p{
+    font-size:14px;
+    padding:0 10px 15px;
+    color:#e6f2ff;
+    line-height:1.6;
+}
+
+.contact-card:hover{
+    transform:translateY(-10px);
+    box-shadow:0 12px 25px rgba(0,0,0,0.4);
+}
+
+/* EXTRA BOX */
+.contact-extra{
+    width:85%;
+    margin:auto;
+    padding:25px;
+    background:rgba(0,51,102,0.9);
+    border-radius:15px;
+    color:white;
+    box-shadow:0 5px 15px rgba(0,0,0,0.3);
+}
+
+.contact-extra ul{
+    line-height:2;
+    font-size:18px;
+}
+.placement-container{
+    display:flex;
+    flex-wrap:wrap;
+    gap:20px;
+    justify-content:center;
+    margin-top:20px;
+}
+
+.placement-card{
+    width:260px;
+    background:linear-gradient(135deg,#003366,#66b3ff);
+    border-radius:15px;
+    overflow:hidden;
+    box-shadow:0 8px 20px rgba(0,0,80,0.3);
+    transition:0.4s;
+    color:white;
+    text-align:center;
+}
+
+.placement-card img{
+    width:100%;
+    height:160px;
+    object-fit:cover;
+}
+
+.placement-card h3{
+    margin:10px 0;
+}
+
+.placement-card p{
+    font-size:14px;
+    padding:0 10px 15px;
+    color:#e6f2ff;
+}
+
+.placement-card:hover{
+    transform:translateY(-10px);
+    box-shadow:0 12px 25px rgba(0,0,0,0.4);
+}
+
+/* HIGHLIGHTS BOX */
+.placement-box{
+    width:85%;
+    margin:auto;
+    padding:25px;
+    background:rgba(0,51,102,0.9);
+    border-radius:15px;
+    color:white;
+    box-shadow:0 5px 15px rgba(0,0,0,0.3);
+}
+
+.placement-box ul{
+    line-height:2;
+    font-size:18px;
+}
+</style>
 </head>
 
 <body>
 
-    <div class="login-box">
+<!-- HEADER -->
+<div class="container">
 
-        <img src="DIV.png" class="logo">
+    <div style="width:120px;">
+        <img src="DIV.png" class="log" alt="college logo">
+    </div>
 
-        <h2>DIVDHAR ARTS AND SCIENCE COLLEGE</h2>
-         
-        <form action="open.html">
+    <div style="flex:1; text-align:center;">
+        <h1 style="margin:0;">DIVDHAR ARTS AND SCIENCE COLLEGE</h1>
+        <h3 style="margin:5px 0;">(AUTONOMOUS), OOTY</h3>
+    </div>
 
-        <input type="text" placeholder="Enter Your Name" required/>
+    <div style="width:120px;"></div>
 
-        <input type="tel" placeholder="Enter Your Phone Number" maxlength="10"oninput="this.value=this.value.replace(/[^0-9]/g,'').slice(0,10)" required>
+</div>
 
-        <button class="btn">Login</button>
-        </form>
+<!-- NAVBAR -->
+<div class="navy">
+    <a href="#" onclick="showPage('home')">HOME</a>
+    <a href="#" onclick="showPage('about')">ABOUT</a>
+    <a href="#" onclick="showPage('courses')">COURSES</a>
+    <a href="#" onclick="showPage('application')">APPLICATION</a>
+    <a href="#" onclick="showPage('events')">EVENTS</a>
+    <a href="#" onclick="showPage('contact')">CONTACT</a>
+    <a href="#" onclick="showPage('placement')">PLACEMENT</a>
+
+</div>
+
+<!-- HOME -->
+<div id="home" class="page active">
+
+    <h2>Welcome to Divdhar Arts and Science College 🎓</h2>
+
+    <img id="sliderImage" src="campus1.jpg">
+
+    <p>Best education with modern facilities and experienced staff.</p>
+</div>
+
+<!-- ABOUT -->
+<div id="about" class="page">
+  <h2><center>🙏 About Divdhar Arts and Science College, Ooty</center></h2>
+
+<p>
+Divdhar Arts and Science College, located in the beautiful hill station of Ooty, Tamil Nadu, is an emerging institution committed to providing quality higher education for rural and urban students. The college aims to create a strong academic foundation with discipline, knowledge, and skill-based learning.
+</p>
+
+<p>
+Situated in the Nilgiris district, the college offers a peaceful and eco-friendly campus environment surrounded by mountains, greenery, and fresh air. This calm atmosphere helps students focus on studies and develop a positive mindset for academic success.
+</p>
+
+<p>
+The institution provides undergraduate and postgraduate programs in Arts, Science, and Commerce streams. With modern teaching methods, experienced faculty members, and well-structured curriculum, the college ensures students are prepared for both employment and higher studies.
+</p>
+
+<p>
+Divdhar Arts and Science College focuses on overall student development including communication skills, leadership qualities, personality development, and technical knowledge. Regular seminars, workshops, cultural events, and sports activities are conducted to enhance student confidence.
+</p>
+
+<p>
+The college also encourages practical learning through laboratory sessions, project works, and industry-oriented training programs. Students are guided to achieve academic excellence and build successful careers in their chosen fields.
+</p>
+
+<p>
+Our vision is to become one of the leading institutions in the Nilgiris region by providing affordable, accessible, and high-quality education to all students without discrimination.
+</p>
+
+<p>
+We believe education is not just about learning subjects, but about shaping responsible citizens who contribute positively to society and nation building.
+</p>
+
+<h3>🎯 Vision</h3>
+<p>
+To empower students with knowledge, discipline, and skills to achieve success in their careers and life.
+</p>
+
+<h3>🎯 Mission</h3>
+<p>
+To provide quality education, improve rural student opportunities, and build strong academic and professional excellence.
+</p>
+</div>
+<!-- COURSES -->
+<div id="courses" class="page">
+  
+<h2>🎓 Our Academic Courses</h2>
+
+<p>
+Divdhar Arts and Science College offers a wide range of Undergraduate (UG), Postgraduate (PG), and Diploma programs designed to meet industry standards and student career goals.
+</p>
+
+<!-- UG COURSES -->
+<h3>📘 Undergraduate (UG) Courses</h3>
+
+<div class="course-container">
+
+    <div class="course-card">
+        <img src="https://images.unsplash.com/photo-1523240795612-9a054b0db644?auto=format&fit=crop&w=800&q=80">
+        <h4>B.Sc Computer Science</h4>
+        <p>Programming, Software Development, AI basics and IT skills.</p>
+    </div>
+
+    <div class="course-card">
+        <img src="https://images.unsplash.com/photo-1555949963-aa79dcee981c?auto=format&fit=crop&w=800&q=80">
+        <h4>BCA</h4>
+        <p>Computer Applications, Coding, Web Development, and Database systems.</p>
+    </div>
+
+    <div class="course-card">
+        <img src="https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?auto=format&fit=crop&w=800&q=80">
+        <h4>B.Com</h4>
+        <p>Accounting, Finance, Business Law, and Commerce fundamentals.</p>
+    </div>
+
+    <div class="course-card">
+        <img src="https://images.unsplash.com/photo-1521737604893-d14cc237f11d?auto=format&fit=crop&w=800&q=80">
+        <h4>BBA</h4>
+        <p>Business Management, Marketing, HR, and Entrepreneurship skills.</p>
+    </div>
+
+</div>
+
+<!-- PG COURSES -->
+<h3>🎓 Postgraduate (PG) Courses</h3>
+
+<div class="course-container">
+
+    <div class="course-card">
+        <img src="https://images.unsplash.com/photo-1513258496099-48168024aec0?auto=format&fit=crop&w=800&q=80">
+        <h4>M.Sc Computer Science</h4>
+        <p>Advanced programming, AI, Data Science, and Software Engineering.</p>
+    </div>
+
+    <div class="course-card">
+        <img src="https://images.unsplash.com/photo-1507679799987-c73779587ccf?auto=format&fit=crop&w=800&q=80">
+        <h4>M.Com</h4>
+        <p>Advanced commerce, banking, taxation, and financial management.</p>
+    </div>
+
+    <div class="course-card">
+        <img src="https://images.unsplash.com/photo-1450101499163-c8848c66ca85?auto=format&fit=crop&w=800&q=80">
+        <h4>M.A English</h4>
+        <p>Literature studies, communication skills, and language mastery.</p>
+    </div>
+
+</div>
+
+<!-- DIPLOMA COURSES -->
+<h3>📗 Diploma Courses</h3>
+
+<div class="course-container">
+
+    <div class="course-card">
+        <img src="https://images.unsplash.com/photo-1519389950473-47ba0277781c?auto=format&fit=crop&w=800&q=80">
+        <h4>Diploma in Computer Applications</h4>
+        <p>Basic computer skills, MS Office, internet, and programming basics.</p>
+    </div>
+
+    <div class="course-card">
+        <img src="https://images.unsplash.com/photo-1581090700227-1e37b190418e?auto=format&fit=crop&w=800&q=80">
+        <h4>Diploma in Accounting</h4>
+        <p>Accounting software, GST basics, and financial records management.</p>
+    </div>
+
+    <div class="course-card">
+        <img src="https://images.unsplash.com/photo-1531497865144-0464ef8fb9a9?auto=format&fit=crop&w=800&q=80">
+        <h4>Diploma in Web Design</h4>
+        <p>HTML, CSS, JavaScript, and responsive website development.</p>
+    </div>
+
+</div>
+
+</div>
+
+<!-- APPLICATION -->
+
+   <div id="application" class="page">
+
+<h2>🎓 Admission Form</h2>
+
+<div class="form-box">
+
+<form onsubmit="return submitForm()">
+
+    <label>Student Name</label>
+    <input type="text" id="name" placeholder="Enter Full Name" required>
+
+    <label>Date of Birth</label>
+    <input type="date" id="dob" required>
+
+    <label>Gender</label>
+    <select id="gender" required>
+        <option value="">Select Gender</option>
+        <option>Male</option>
+        <option>Female</option>
+        <option>Other</option>
+    </select>
+
+    <label>Phone Number</label>
+    <input type="tel" id="phone" maxlength="10"
+    oninput="this.value=this.value.replace(/[^0-9]/g,'').slice(0,10)"
+    placeholder="Enter Phone Number" required>
+
+    <label>Email</label>
+    <input type="email" id="email" placeholder="Enter Email" required>
+
+    <label>Course</label>
+    <select id="course" required>
+        <option value="">Select Course</option>
+        <option>B.Sc Computer Science</option>
+        <option>BCA</option>
+        <option>B.Com</option>
+        <option>BBA</option>
+        <option>M.Sc Computer Science</option>
+    </select>
+
+    <label>Address</label>
+    <textarea id="address" placeholder="Enter Address" required></textarea>
+
+    <button type="submit">Submit Application</button>
+
+</form>
+
+<p id="msg"></p>
+
+</div>
+</div>
+
+</section>
+<script>
+function submitForm(){
+
+    let name = document.getElementById("name").value;
+
+    document.getElementById("msg").innerHTML =
+    "✅ Application Submitted Successfully! Thank you " + name;
+
+    return false; // page refresh stop
+}
+</script>
+
+<!-- EVENTS -->
+<div id="events" class="page">
+   
+<h2>🏆 Sports, NCC, NSS & Student Activities</h2>
+
+<p>
+Divdhar Arts and Science College provides a disciplined and activity-rich environment where students grow through Sports, NCC, NSS, Clubs, and Camp activities. These programs build confidence, leadership, teamwork, and social responsibility.
+</p>
+
+<div class="sports-container">
+
+    <!-- SPORTS -->
+    <div class="sport-card">
+        <img src="https://images.unsplash.com/photo-1543357480-c60d40007a3f?auto=format&fit=crop&w=800&q=80">
+        <h3>🏏 Sports Activities</h3>
+        <p>Cricket, Football, Volleyball, Athletics, and Indoor games are conducted regularly.</p>
+    </div>
+
+    <!-- NCC -->
+      <div class="sport-card">
+        <img src="https://images.unsplash.com/photo-1509099836639-18ba1795216d" alt="Cleanliness Drive">
+        <h3>🌿 Social Service</h3>
+        <p>Cleanliness drives, tree plantation and community support activities.</p>
+    </div>
+
+    <!-- NSS -->
+    <div class="sport-card">
+        <img src="https://images.unsplash.com/photo-1588072432836-e10032774350?auto=format&fit=crop&w=800&q=80">
+        <h3>🤝 NSS Activities</h3>
+        <p>Village camps, blood donation, tree plantation, and social awareness programs.</p>
+    </div>
+
+    <!-- DISCIPLINE -->
+    <div class="sport-card">
+        <img src="https://images.unsplash.com/photo-1529070538774-1843cb3265df?auto=format&fit=crop&w=800&q=80">
+        <h3>📘 Discipline Program</h3>
+        <p>Strict discipline culture to develop punctuality, responsibility, and respect among students.</p>
+    </div>
+
+    <!-- CAMP -->
+    <div class="sport-card">
+        <img src="https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?auto=format&fit=crop&w=800&q=80">
+        <h3>🏕 Camps</h3>
+        <p>Annual training camps, NSS village camps, and NCC special camps for leadership experience.</p>
+    </div>
+
+    <!-- CLUBS -->
+    <div class="sport-card">
+        <img src="https://images.unsplash.com/photo-1523240795612-9a054b0db644?auto=format&fit=crop&w=800&q=80">
+        <h3>🎯 Student Clubs</h3>
+        <p>English club, Science club, Coding club, and Cultural club activities for skill development.</p>
+    </div>
+
+</div>
+
+<br>
+
+<div class="achievement-box">
+
+    <h3>🏅 Key Highlights</h3>
+
+    <ul>
+        <li>🏆 Inter-college Sports Competitions</li>
+        <li>🎖 NCC Parade & Drill Training Camps</li>
+        <li>🏕 NSS Village & Special Camps</li>
+        <li>📘 Discipline Monitoring System</li>
+        <li>🎯 Active Student Clubs & Events</li>
+        <li>🌿 Social Awareness & Development Programs</li>
+    </ul>
+
+</div>
+</div>
+
+<!-- CONTACT -->
+<div id="contact" class="page">
+ 
+<h2>📞 Contact Us</h2>
+
+<p>
+We are always ready to help students, parents, and visitors. Feel free to contact Divdhar Arts and Science College through any of the details below.
+</p>
+
+<div class="contact-container">
+
+    <!-- ADDRESS -->
+    <div class="contact-card">
+        <img src="https://images.unsplash.com/photo-1526778548025-fa2f459cd5c1?auto=format&fit=crop&w=800&q=80">
+        <h3>📍 Address</h3>
+        <p>
+Divdhar Arts and Science College<br>
+Ooty Main Road, Udhagamandalam<br>
+Nilgiris District<br>
+Tamil Nadu – 643001<br>
+India
+        </p>
+    </div>
+
+    <!-- PHONE -->
+    <div class="contact-card">
+        <img src="https://images.unsplash.com/photo-1516387938699-a93567ec168e?auto=format&fit=crop&w=800&q=80">
+        <h3>📞 Phone Numbers</h3>
+        <p>
+Principal Office: +91 98765 43210<br>
+Admission Cell: +91 91234 56789<br>
+Office Landline: (04562) 232648<br>
+Student Help Desk: +91 99887 77665
+        </p>
+    </div>
+
+    <!-- EMAIL -->
+    <div class="contact-card">
+        <img src="https://images.unsplash.com/photo-1557200134-90327ee9fafa?auto=format&fit=crop&w=800&q=80">
+        <h3>📧 Email</h3>
+        <p>
+General: info@divdharcollege.ac.in<br>
+Admission: admission@divdharcollege.ac.in<br>
+Support: support@divdharcollege.ac.in<br>
+Placement: placement@divdharcollege.ac.in
+        </p>
+    </div>
+
+    <!-- OFFICE HOURS -->
+    <div class="contact-card">
+        <img src="https://images.unsplash.com/photo-1506784365847-bbad939e9335?auto=format&fit=crop&w=800&q=80">
+        <h3>⏰ Office Hours</h3>
+        <p>
+Monday – Friday: 9:00 AM – 4:30 PM<br>
+Saturday: 9:00 AM – 1:00 PM<br>
+Sunday: Holiday<br><br>
+Emergency support available 24/7 for hostel students.
+        </p>
+    </div>
+
+</div>
+
+<br>
+
+<div class="contact-extra">
+
+    <h3>🌐 Quick Support Links</h3>
+
+    <ul>
+        <li>📄 Admission Enquiry Form Available</li>
+        <li>🎓 Scholarship Support Desk</li>
+        <li>🏠 Hostel & Transport Help</li>
+        <li>💼 Placement Cell Contact</li>
+        <li>📢 Student Grievance Portal</li>
+    </ul>
+
+</div>
+
+</div>
+
+
+<h2>💼 Placement & Career Opportunities</h2>
+
+<p>
+Divdhar Arts and Science College provides strong placement support through training, industry exposure, and campus interviews with leading companies.
+</p>
+
+<div class="placement-container">
+
+    <!-- TRAINING -->
+    <div class="placement-card">
+        <img src="https://images.unsplash.com/photo-1521737604893-d14cc237f11d?auto=format&fit=crop&w=800&q=80">
+        <h3>🎯 Skill Training</h3>
+        <p>Communication skills, aptitude training, and interview preparation sessions.</p>
+    </div>
+
+    <!-- COMPANIES -->
+    <div class="placement-card">
+        <img src="https://images.unsplash.com/photo-1523958203904-cdcb402031fd?auto=format&fit=crop&w=800&q=80">
+        <h3>🏢 Top Recruiters</h3>
+        <p>IT, Banking, Finance, BPO and Core companies visit for campus recruitment.</p>
+    </div>
+
+    <!-- INTERVIEW -->
+    <div class="placement-card">
+        <img src="https://images.unsplash.com/photo-1551836022-deb4988cc6c0?auto=format&fit=crop&w=800&q=80">
+        <h3>📝 Interview Process</h3>
+        <p>Written test, group discussion, technical round and HR interview stages.</p>
+    </div>
+
+    <!-- INTERNSHIP -->
+    <div class="placement-card">
+        <img src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?auto=format&fit=crop&w=800&q=80">
+        <h3>🤝 Internship Support</h3>
+        <p>Industry internships and real-time project experience for students.</p>
+    </div>
+
+    <!-- CAREER GUIDANCE -->
+    <div class="placement-card">
+        <img src="https://images.unsplash.com/photo-1507537509458-b8312d35a233?auto=format&fit=crop&w=800&q=80">
+        <h3>📈 Career Guidance</h3>
+        <p>Personal career counseling and guidance for higher studies & jobs.</p>
+    </div>
+
+</div>
+
+<br>
+<section id="placement"></section>
+<div class="placement-box">
+
+    <h3>📊 Placement Highlights</h3>
+
+    <ul>
+        <li>💼 Strong Placement Cell Support</li>
+        <li>🏢 50+ Companies Visiting Every Year</li>
+        <li>🎯 Soft Skills & Aptitude Training</li>
+        <li>🧑‍💼 Internship Opportunities</li>
+        <li>📈 Career Development Programs</li>
+    </ul>
+
+</div>
+<!-- FOOTER -->
+<div class="footer">
+    © 2026 Divdhar Arts and Science College | Ooty
+</div>
+
+<!-- SCRIPT -->
+<script>
+function showPage(pageId){
+
+    let pages = document.querySelectorAll(".page");
+
+    pages.forEach(p => p.classList.remove("active"));
+
+    document.getElementById(pageId).classList.add("active");
+}
+
+/* IMAGE SLIDER */
+let images = ["campus1.jpg","campus2.jpg","campus3.jpg"];
+let index = 0;
+
+setInterval(()=>{
+    index = (index + 1) % images.length;
+    document.getElementById("sliderImage").src = images[index];
+},3000);
+</script>
+
 </body>
 </html>
