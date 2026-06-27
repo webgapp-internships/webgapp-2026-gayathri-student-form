@@ -1,0 +1,962 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Royal Stay Hotel</title>
+
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+
+<style>
+body{
+    font-family:Poppins;
+    background:linear-gradient(to right,#2d394b,#2d394b);
+    color:#04f5d5;
+    margin:0;
+    padding-top:145px;
+}
+ .card{
+    border-radius:15px;
+    transition:.4s;
+}
+
+.card:hover{
+    transform:translateY(-10px);
+    box-shadow:0 15px 30px whitesmoke;
+}
+/*about*/
+
+.about-title{
+font-family:'Playfair Display', serif;
+font-size:36px;
+font-weight:700;
+color:yellow;
+text-align:center;
+margin-bottom:30px;
+}
+
+.about-subtitle{
+font-family:'Playfair Display', serif;
+font-size:24px;
+font-weight:600;
+color:darkkhaki;
+margin-bottom:15px;
+}
+
+.about-text{
+font-family:'Poppins', sans-serif;
+font-size:15px;
+color:white;
+line-height:1.7;
+}
+
+.about-list{
+list-style:none;
+padding-left:0;
+font-family:'Poppins', sans-serif;
+color:white;
+}
+
+.about-list li{
+padding:5px 0;
+font-size:15px;
+}
+
+/* HEADER */
+
+.header{
+    width:100%;
+    background:midnightblue;
+    position:fixed;
+    top:0;
+    left:0;
+    z-index:1000;
+    box-shadow:0 5px 15px rgba(0,0,0,.2);
+}
+
+/* Top */
+
+.header-top{
+    position:relative;
+    height:90px;
+    display:flex;
+    align-items:center;
+}
+
+/* Logo Left */
+
+.logo-box{
+    position:absolute;
+    left:25px;
+}
+
+.logo{
+    width:70px;
+    height:70px;
+    object-fit:contain;
+}
+
+/* Hotel Name Center */
+
+.hotel-name{
+    width:100%;
+    text-align:center;
+}
+
+.hotel-name h1{
+    color:#f3e30f;
+    font-size:38px;
+    font-family:'Playfair Display',serif;
+    font-weight:bold;
+    margin:0;
+    letter-spacing:2px;
+}
+
+/* Menu */
+
+.menu-bar{
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    gap:35px;
+    background:#29485d;
+    padding:15px 0;
+}
+
+.menu-bar a{
+    color:white;
+    text-decoration:none;
+    cursor:pointer;
+    font-size:18px;
+    font-weight:500;
+    transition:.3s;
+}
+
+.menu-bar a:hover{
+    color:#ffd700;
+    transform:translateY(-3px);
+}
+
+.menu-bar a:active{
+    color:#ffcc00;
+}
+
+/* Body Space */
+.page{
+    display:none;
+}
+
+.page.active{
+    display:block;
+}
+/* hero */
+.hero{
+height:90vh;
+background:url('https://images.unsplash.com/photo-1506059612708-99d6c258160e?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MzZ8fGhvdGVsfGVufDB8fDB8fHww') center center no-repeat; 
+display:flex;
+align-items:center;
+justify-content:center;
+color:#ebf106;
+text-align:center;
+flex-direction:column;
+ background-size:100%;
+
+}
+
+.card{transition:0.3s}
+.card:hover{transform:scale(1.05)}
+
+footer{
+background:midnightblue;
+color:white;
+text-align:center;
+padding:15px;
+margin-top:30px;
+}
+.whatsapp-btn{
+position:fixed;
+bottom:20px;
+right:20px;
+background:#106d32;
+color:white;
+font-size:28px;
+width:60px;
+height:60px;
+display:flex;
+align-items:center;
+justify-content:center;
+border-radius:50%;
+text-decoration:none;
+z-index:999;
+}
+/*contact*/
+.contact-card{
+padding:20px;
+border-radius:15px;
+color:white;
+box-shadow:0 5px 15px whitesmoke;
+transition:0.3s;
+}
+
+.contact-card:hover{
+transform:translateY(-8px);
+}
+.contact-card{
+padding:22px;
+border-radius:16px;
+background:#ffffff;
+color:white;
+box-shadow:0 8px 20px rgba(0,0,0,0.08);
+transition:0.3s;
+border-left:5px solid #91d4f1;
+}
+
+.contact-card:hover{
+transform:translateY(-6px);
+box-shadow:0 12px 25px rgba(0,0,0,0.15);
+}
+#contact h2{
+color:#23aeeb;
+font-weight:700;
+letter-spacing:1px;
+}
+#contact .btn-danger{
+background:linear-gradient(135deg,#ff416c,#ff4b2b);
+border:none;
+border-radius:8px;
+}
+
+#contact .btn-danger:hover{
+transform:scale(1.05);
+}
+#contact .btn-primary{
+background:linear-gradient(135deg,#2193b0,#6dd5ed);
+border:none;
+}
+
+#contact .btn-success{
+background:linear-gradient(135deg,#35860f,#a8e063);
+border:none;
+}
+
+#contact .btn{
+border-radius:10px;
+transition:0.3s;
+}
+
+#contact .btn:hover{
+transform:scale(1.05);
+}
+
+.log{
+  width:90px;
+  height:60px;
+  object-fit:contain;
+}
+
+.menu a{
+  margin: 0 10px;
+  text-decoration: none;
+  color: aquamarine;
+}
+/* COLORS */
+.contact-card.hotel{
+background:linear-gradient(135deg,#742b83,#dd2476);
+}
+
+.contact-card.info{
+background:linear-gradient(135deg,#2193b0,#6dd5ed);
+}
+
+.contact-card.map{
+background:linear-gradient(135deg,#c98b40,#ffd200);
+color:#000;
+}
+
+.contact-card.action{
+background:linear-gradient(135deg,#1dd6a8,#09aa3f);
+} 
+/* ROOMS SECTION */
+.room-card{
+    border:none;
+    border-radius:15px;
+    overflow:hidden;
+    box-shadow:0 5px 15px rgba(0,0,0,0.1);
+    transition:0.3s;
+    height:100%;
+    color:#000
+}
+
+.room-card:hover{
+    transform:scale(1.03);
+}
+
+.room-img{
+    height:200px;
+    object-fit:cover;
+}
+
+.badge-status{
+    position:absolute;
+    top:10px;
+    left:10px;
+    padding:6px 10px;
+    border-radius:20px;
+    font-size:12px;
+    color:white;
+}
+
+.available{background:green;}
+.booked{background:red;}
+
+.price{
+    font-size:18px;
+    font-weight:bold;
+}
+/* faclities*/
+.facility-card{
+border-radius:15px;
+overflow:hidden;
+transition:0.4s;
+box-shadow:0 4px 10px white;
+}
+
+.facility-card img{
+height:180px;
+object-fit:cover;
+}
+
+.facility-card:hover{
+transform:translateY(-10px) scale(1.03);
+box-shadow:0 10px 20px rgba(0,0,0,0.2);
+}
+.btn-primary{
+background:linear-gradient(135deg,#ff512f,#dd2476);
+border:none;
+}
+
+.btn-success{
+background:linear-gradient(135deg,#56ab2f,#a8e063);
+border:none;
+}
+
+.btn-warning{
+background:linear-gradient(135deg,#f7971e,#ffd200);
+border:none;
+}
+
+.btn:hover{
+transform:scale(1.05);
+}
+</style>
+</head>
+
+<body>
+ 
+<!-- HEADER -->
+<header class="header">
+
+    <!-- Logo + Hotel Name -->
+    <div class="header-top">
+        <div class="logo-box">
+            <img src="LOGO1.png" alt="Logo" class="logo">
+        </div>
+
+        <div class="hotel-name">
+            <h1>🌟ROYAL STAY HOTEL🌟</h1>
+        </div>
+    </div>
+
+    <!-- Navigation -->
+    <nav class="menu-bar">
+        <a onclick="showPage('home')">Home</a>
+        <a onclick="showPage('about')">About</a>
+        <a onclick="showPage('rooms')">Rooms</a>
+        <a onclick="showPage('facility')">Facilities</a>
+        <a onclick="showPage('reviews')">Reviews</a>
+        <a onclick="showPage('booking')">Booking</a>
+        <a onclick="showPage('contact')">Contact</a>
+    </nav>
+
+</header>
+<!-- HOME -->
+<div id="home" class="page active">
+
+<section class="hero">
+<h1><b>Welcome to Royal Stay Hotel</b></h1>
+<p>Luxury • Comfort • Experience</p>
+<button class="btn btn-warning" onclick="showPage('booking')">Book Now</button>
+</section>
+<section class="container my-5">
+
+<div class="row text-center">
+
+<div class="col-md-3">
+<div class="card p-4 shadow">
+<h2>120+</h2>
+<p>Luxury Rooms</p>
+</div>
+</div>
+
+<div class="col-md-3">
+<div class="card p-4 shadow">
+<h2>5000+</h2>
+<p>Happy Guests</p>
+</div>
+</div>
+
+<div class="col-md-3">
+<div class="card p-4 shadow">
+<h2>24/7</h2>
+<p>Room Service</p>
+</div>
+</div>
+
+<div class="col-md-3">
+<div class="card p-4 shadow">
+<h2>5⭐</h2>
+<p>Customer Rating</p>
+</div>
+</div>
+
+</div>
+
+</section>
+
+</div>
+
+<a href="https://wa.me/919876543210?text=Hi%20I%20want%20to%20book%20a%20room%20at%20Royal%20Stay%20Hotel"
+class="whatsapp-btn"
+target="_blank">
+💬
+</a>
+
+<!-- ABOUT -->
+<div id="about" class="page container py-5">
+
+<h2 class="about-title">🏨 About Royal Stay Hotel</h2>
+
+<div class="row align-items-center g-4">
+
+<!-- IMAGE -->
+<div class="col-md-6">
+<img src="hot3.avif"
+class="img-fluid rounded shadow">
+</div>
+
+<!-- CONTENT -->
+<div class="col-md-6">
+
+<h4 class="about-subtitle"><b>Welcome to Luxury Experience</b></h4>
+
+<p class="about-text">
+Royal Stay Hotel is a premium hospitality destination designed to deliver
+luxury, comfort, and world-class service for every guest.
+</p>
+
+<p class="about-text">
+We ensure a peaceful stay with modern rooms, premium facilities,
+and 24/7 professional support for all visitors.
+</p>
+
+<ul class="about-list">
+<li>✔️ Luxury Rooms & Suites</li>
+<li>✔️ High-Speed WiFi</li>
+<li>✔️ Swimming Pool & Gym</li>
+<li>✔️ Multi-Cuisine Restaurant</li>
+<li>✔️ 24/7 Room Service</li>
+</ul>
+
+<button class="btn btn-primary mt-2" onclick="showPage('booking')">
+Book Your Stay
+</button>
+
+</div>
+
+</div>
+
+</div>
+
+<!-- ROOMS -->
+<div id="rooms" class="page container py-5">
+
+<h2 class="text-center mb-4" style="color:yellow;">OUR ROOMS</h2>
+
+<div class="row g-4">
+
+<!-- ROOM 1 -->
+<div class="col-md-4">
+<div class="card room-card position-relative">
+
+<span class="badge-status available">Available</span>
+
+<img src="room1.avif" class="card-img-top room-img">
+
+<div class="card-body">
+<h5>Deluxe Room</h5>
+<p>2 Guests • AC • WiFi</p>
+<p class="price">₹2500 / night</p>
+
+<button class="btn btn-primary w-100">Book Now</button>
+</div>
+
+</div>
+</div>
+
+<!-- ROOM 2 -->
+<div class="col-md-4">
+<div class="card room-card position-relative">
+
+<span class="badge-status booked">Booked</span>
+
+<img src="room2.avif" class="card-img-top room-img">
+
+<div class="card-body">
+<h5>Suite Room</h5>
+<p>3 Guests • King Bed • TV</p>
+<p class="price">₹4500 / night</p>
+
+<button class="btn btn-secondary w-100" disabled>Not Available</button>
+</div>
+
+</div>
+</div>
+
+<!-- ROOM 3 -->
+<div class="col-md-4">
+<div class="card room-card position-relative">
+
+<span class="badge-status available">Available</span>
+
+<img src="room3.avif" class="card-img-top room-img">
+
+<div class="card-body">
+<h5>Standard Room</h5>
+<p>2 Guests • Budget Room</p>
+<p class="price">₹1200 / night</p>
+
+<button class="btn btn-primary w-100">Book Now</button>
+</div>
+
+</div>
+</div>
+
+<!-- ROOM 4 -->
+<div class="col-md-4">
+<div class="card room-card position-relative">
+
+<span class="badge-status available">Available</span>
+
+<img src="room4.webp" class="card-img-top room-img">
+
+<div class="card-body">
+<h5>Family Room</h5>
+<p>4 Guests • AC • Balcony</p>
+<p class="price">₹3200 / night</p>
+
+<button class="btn btn-primary w-100">Book Now</button>
+</div>
+
+</div>
+</div>
+
+<!-- ROOM 5 -->
+<div class="col-md-4">
+<div class="card room-card position-relative">
+
+<span class="badge-status booked">Booked</span>
+
+<img src="room5.avif" class="card-img-top room-img">
+
+<div class="card-body">
+<h5>Premium Room</h5>
+<p>Luxury Stay • TV</p>
+<p class="price">₹5000 / night</p>
+
+<button class="btn btn-secondary w-100" disabled>Not Available</button>
+</div>
+
+</div>
+</div>
+
+<!-- ROOM 6 -->
+<div class="col-md-4">
+<div class="card room-card position-relative">
+
+<span class="badge-status available">Available</span>
+
+<img src="room6.avif" class="card-img-top room-img">
+
+<div class="card-body">
+<h5>Single Room</h5>
+<p>1 Guest • Budget Stay</p>
+<p class="price">₹900 / night</p>
+
+<button class="btn btn-primary w-100" onclick="showPage('booking')">
+Book Now
+</button>
+</div>
+
+</div>
+</div>
+
+</div>
+</div>
+
+<!-- FACILITIES -->
+<div id="facility" class="page container">
+
+<h2 class="text-center mb-4"style="color:yellow;">HOTEL FACILITIES</h2>
+
+<div class="row g-4">
+
+<!-- WiFi -->
+<div class="col-md-3">
+<div class="card facility-card">
+<img src="wifi.jpg" class="card-img-top">
+<div class="card-body">
+<h5>Free WiFi</h5>
+<p>High-speed internet available 24/7 for all guests.</p>
+</div>
+</div>
+</div>
+
+<!-- Swimming Pool -->
+<div class="col-md-3">
+<div class="card facility-card">
+<img src="swing.avif" class="card-img-top">
+<div class="card-body">
+<h5>Swimming Pool</h5>
+<p>Luxury swimming pool for relaxation and enjoyment.</p>
+</div>
+</div>
+</div>
+
+<!-- Restaurant -->
+<div class="col-md-3">
+<div class="card facility-card">
+<img src="buq.jpg" class="card-img-top">
+<div class="card-body">
+<h5>Restaurant</h5>
+<p>Multi-cuisine restaurant with delicious food varieties.</p>
+</div>
+</div>
+</div>
+
+<!-- Gym -->
+<div class="col-md-3">
+<div class="card facility-card">
+<img src="gym.jpg" class="card-img-top">
+<div class="card-body">
+<h5>Fitness Gym</h5>
+<p>Modern gym equipment for daily fitness activities.</p>
+</div>
+</div>
+</div>
+
+<!-- Room Service -->
+<div class="col-md-3">
+<div class="card facility-card">
+<img src="ser.jpg" class="card-img-top">
+<div class="card-body">
+<h5>Room Service</h5>
+<p>24/7 room service for guest comfort and convenience.</p>
+</div>
+</div>
+</div>
+
+<!-- Parking -->
+<div class="col-md-3">
+<div class="card facility-card">
+<img src="park.jpg" class="card-img-top">
+<div class="card-body">
+<h5>Parking Area</h5>
+<p>Safe and secure parking space for all vehicles.</p>
+</div>
+</div>
+</div>
+
+<!-- Spa -->
+<div class="col-md-3">
+<div class="card facility-card">
+<img src="spa.jpg" class="card-img-top">
+<div class="card-body">
+<h5>Spa & Wellness</h5>
+<p>Relaxing spa treatments for stress-free experience.</p>
+</div>
+</div>
+</div>
+
+<!-- Banquet Hall -->
+<div class="col-md-3">
+<div class="card facility-card">
+<img src="bb.jpg" class="card-img-top">
+<div class="card-body">
+<h5>Banquet Hall</h5>
+<p>Large hall for events, meetings and celebrations.</p>
+</div>
+</div>
+</div>
+
+</div>
+</div>
+
+
+<!-- BOOKING -->
+<div id="booking" class="page container">
+
+<h2 style="color:yellow;"><CENTER>BOOKING</CENTER></h2>
+
+<form onsubmit="book(event)" class="p-3 bg-white shadow rounded">
+<label style="color:rgb(35, 15, 219);">Customer Name</label>
+<input id="name" class="form-control mb-2" placeholder="Name">
+<label style="color:rgb(35, 15, 219);"> Availabe Rooms</label>
+<select id="room" class="form-select mb-2">
+<option value="1500">Standard room</option>
+<option value="2500">Deluxe room</option>
+<option value="4000">Family room</option>
+<option value="4000">Suite room</option>
+<option value="4000">Luxury room</option>
+<option value="4000">Single room</option>
+</select>
+
+<label style="color:rgb(35, 15, 219);">Check-in Date</label><input id="inDate" type="date" class="form-control mb-2">
+
+<label style="color:rgb(35, 15, 219);">Check-out Date</label><input id="outDate" type="date" class="form-control mb-2">
+<label style="color:rgb(35, 15, 219);">Members Count</label>
+<input id="members" type="number" class="form-control mb-2" placeholder="No of members">
+<label style="color:rgb(35,15,219);">Mobile Number</label>
+
+<input
+    id="phone"
+    type="tel"
+    class="form-control mb-2"
+    placeholder="Enter 10-digit Mobile Number"
+    maxlength="10"
+    pattern="[0-9]{10}"
+    required
+    oninput="this.value=this.value.replace(/[^0-9]/g,'').slice(0,10)">
+    <label style="color:rgb(35,15,219);">Email ID</label>
+
+<input
+    id="email"
+    type="email"
+    class="form-control mb-2"
+    placeholder="Enter Email Address"
+    required>
+
+<label style="color:rgb(35, 15, 219);">Address</label>
+<input id="address" class="form-control mb-2" placeholder="Enter address">
+
+<button class="btn btn-primary w-100">Book Now</button>
+
+</form>
+
+<div id="result" class="mt-3"></div>
+<!-- TOAST MESSAGE (IMPORTANT) -->
+<div id="toast" style="
+position:fixed;top:20px;right:20px;
+background:green;color:white;
+padding:20px 25px;
+border-radius:20px;
+display:none;
+z-index:9999;">
+✔ your Booking is Successful!
+</div>
+</div>
+
+<!-- REVIEWS -->
+<div id="reviews" class="page container py-5">
+
+<h2 class="text-center mb-4" style="color:yellow;">⭐ CUSTOMER REVIEWS</h2>
+
+<div class="row g-4">
+<!-- NEW REVIEWS WILL APPEAR HERE -->
+<div id="newReviews" class="row g-4 mt-3"></div>
+<!-- Review 1 -->
+<div class="col-md-4">
+<div class="card shadow p-3">
+<h5> Kumar</h5>
+<p>⭐⭐⭐⭐⭐</p>
+<p>Very clean rooms and excellent service. I enjoyed my stay at Royal Stay Hotel.</p>
+<small class="text-muted">Stayed: Deluxe Room</small>
+</div>
+</div>
+
+<!-- Review 2 -->
+<div class="col-md-4">
+<div class="card shadow p-3">
+<h5>Priya S</h5>
+<p>⭐⭐⭐⭐</p>
+<p>Good hotel with nice facilities. Staff behavior was very friendly.</p>
+<small class="text-muted">Stayed: Suite Room</small>
+</div>
+</div>
+
+<!-- Review 3 -->
+<div class="col-md-4">
+<div class="card shadow p-3">
+<h5>Rahul</h5>
+<p>⭐⭐⭐⭐⭐</p>
+<p>Best experience! Rooms are very comfortable and food is tasty.</p>
+<small class="text-muted">Stayed: Family Room</small>
+</div>
+</div>
+
+</div>
+
+<!-- CUSTOMER REVIEW FORM -->
+<div class="mt-5">
+
+<h4 class="mb-3">✍️ Give Your Review</h4>
+
+<form onsubmit="addReview(event)" class="p-3 bg-white shadow rounded">
+
+<input id="cname" class="form-control mb-2" placeholder="Your Name">
+
+<select id="rating" class="form-select mb-2">
+<option value="5">⭐⭐⭐⭐⭐ (5)</option>
+<option value="4">⭐⭐⭐⭐ (4)</option>
+<option value="3">⭐⭐⭐ (3)</option>
+<option value="2">⭐⭐ (2)</option>
+<option value="1">⭐ (1)</option>
+</select>
+
+<textarea id="comment" class="form-control mb-2" placeholder="Your Review"></textarea>
+
+<button class="btn btn-primary w-100">Submit Review</button>
+
+</form>
+
+</div>
+
+
+
+</div>
+
+<!-- CONTACT -->
+<div id="contact" class="page container">
+
+<h2 class="text-center mb-4" style="color:yellow;">📞 CONTACT & SUPPORT</h2>
+
+<div class="row g-4">
+
+<!-- HOTEL INFO -->
+<div class="col-md-6">
+<div class="contact-card hotel">
+
+<h4>🏨 Royal Stay Hotel</h4>
+
+<p>📍 No.25 Anna Salai, Chennai, Tamil Nadu - 600002</p>
+<p>🕒 Open 24/7 for Guests</p>
+<p>⭐ Luxury • Comfort • Service</p>
+
+</div>
+</div>
+
+<!-- CONTACT DETAILS -->
+<div class="col-md-6">
+<div class="contact-card info">
+
+<h4>📞 Get in Touch</h4>
+
+<p>📱 Reception: +91 9003504544</p>
+<p>📱 Booking: +91 6379947543</p>
+<p>☎ Landline: 044-23456789</p>
+<p>✉ Email: royalstay@gmail.com</p>
+
+</div>
+</div>
+
+<!-- MAP -->
+<div class="col-md-6">
+<div class="contact-card map">
+
+<h4>🗺️ Location</h4>
+
+<p>Find us easily on Google Maps</p>
+
+<a href="https://www.google.com/maps?q=Chennai+Central"
+target="_blank"
+class="btn btn-danger w-100">
+📍 Open Google Map
+</a>
+
+</div>
+</div>
+
+<!-- QUICK ACTION -->
+<div class="col-md-6">
+<div class="contact-card action">
+
+<h4>⚡ Quick Actions</h4>
+
+<a href="tel:+919876543210" class="btn btn-primary w-100 mb-2">
+📞 Call Now
+</a>
+
+<a href="https://wa.me/919876543210?text=Hi%20Royal%20Stay%20Hotel"
+target="_blank"
+class="btn btn-success w-100">
+💬 WhatsApp
+</a>
+
+</div>
+</div>
+
+</div>
+</div>
+
+<!-- SCRIPT -->
+<script>
+function showPage(id){
+document.querySelectorAll('.page').forEach(p=>p.classList.remove('active'));
+document.getElementById(id).classList.add('active');
+}
+
+function showPage(id){
+  document.querySelectorAll('.page').forEach(p=>p.classList.remove('active'));
+  document.getElementById(id).classList.add('active');
+  window.scrollTo({top:0, behavior:"smooth"});
+}
+function book(e){
+  e.preventDefault();
+
+  let name = document.getElementById("name").value;
+  let room = parseInt(document.getElementById("room").value);
+  let members = document.getElementById("members").value;
+  let inDate = document.getElementById("inDate").value;
+  let outDate = document.getElementById("outDate").value;
+
+  // date difference (days calculate)
+  let date1 = new Date(inDate);
+  let date2 = new Date(outDate);
+  let diffTime = date2 - date1;
+  let days = diffTime / (1000 * 60 * 60 * 24);
+
+  if(days <= 0 || isNaN(days)){
+    alert("Please select correct dates");
+    return;
+  }
+
+  let total = room * days;
+
+  document.getElementById("result").innerHTML =
+  `<div class="alert alert-success mt-3">
+    Booking Confirmed for <b>${name}</b><br>
+    Days: ${days}<br>
+    Total ₹${total}
+  </div>`;
+
+  showToast("🎉 Booking Successful!");
+}
+</script>
+<!-- 👇 HERE PASTE WHATSAPP BUTTON -->
+<a href="https://wa.me/919876543210?text=Hi..." class="whatsapp-btn" target="_blank">💬</a>
+<!-- FOOTER -->
+<footer>
+© 2026 Royal Stay Hotel
+</footer>
+
+</body>
+</html>

@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Royal Stay Hotel</title>
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+<style>
+body{font-family:Poppins,sans-serif;background:#e9b6b6}
+.page{display:none}.active{display:block}
+.hero{height:85vh;background:linear-gradient(rgba(0,0,0,.55),rgba(0,0,0,.55)),url('https://images.unsplash.com/photo-1566073771259-6a8506099945?w=1600')
+ center/cover;
+color:#fff;
+display:flex;align-items:center;
+justify-content:center;
+ width:1500px;
+height:350px;text-align:center}
+.card{box-shadow:0 4px 15px rgba(0,0,0,.12);transition:.3s}
+.card:hover{transform:translateY(-5px)}
+.gallery img{height:250px;width:100%;object-fit:cover}
+.stats{background:#d1d6db;color:#ad7676;padding:40px 0}
+footer{background:#eff1f3;color:#ac7575;padding:20px;text-align:center}
+</style>
+</head>
+<body>
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+<div class="container">
+<a class="navbar-brand" href="#">🏨 ROYAL STAY HOTEL</a>
+<div class="navbar-nav ms-auto">
+<a class="nav-link" href="#" onclick="showPage('home')">Home</a>
+<a class="nav-link" href="#" onclick="showPage('about')">About</a>
+<a class="nav-link" href="#" onclick="showPage('facility')">Facilities</a>
+<a class="nav-link" href="#" onclick="showPage('rooms')">Rooms</a>
+<a class="nav-link" href="#" onclick="showPage('gallery')">Gallery</a>
+<a class="nav-link" href="#" onclick="showPage('booking')">Booking</a>
+<a class="nav-link" href="#" onclick="showPage('reviews')">Reviews</a>
+<a class="nav-link" href="#" onclick="showPage('contact')">Contact</a>
+</div></div></nav>
+
+<div id="home" class="page active">
+<section class="hero"><div><h1>ROYAL STAY HOTEL</h1></div></section>
+<div class="container py-5">
+<div class="row text-center">
+<div class="col-md-3"><div class="card p-3"><h3>500+</h3><p>Happy Guests</p></div></div>
+<div class="col-md-3"><div class="card p-3"><h3>50+</h3><p>Luxury Rooms</p></div></div>
+<div class="col-md-3"><div class="card p-3"><h3>10+</h3><p>Years Experience</p></div></div>
+<div class="col-md-3"><div class="card p-3"><h3>24/7</h3><p>Support</p></div></div>
+</div></div>
+</div>
+
+<div id="about" class="page container py-5">
+<h2>About Us</h2>
+<p>Royal Stay Hotel is a modern luxury hotel developed as an internship project. Our mission is to provide comfortable accommodation, premium hospitality, online room booking, customer support and efficient hotel management services.</p>
+<p>We offer well-furnished rooms, restaurant services, conference halls, travel assistance, laundry service, fitness facilities and entertainment options for guests.</p>
+<p>This project demonstrates room management, booking management, customer feedback, room availability and service management using HTML, CSS, JavaScript and Bootstrap.</p>
+<p>Our vision is to deliver a memorable guest experience through innovation, comfort and quality service.</p>
+</div>
+
+<div id="facility" class="page container py-5">
+<h2>Facilities</h2>
+<div class="col-md-3">
+<div class="card">
+<img src="wifi.jpg" class="card-img-top">
+<div class="card-body">
+<h5>IT Department</h5>
+<p>Free WiFi service is provided for all guests.</p>
+</div>
+</div>
+</div>
+
+<div class="col-md-3">
+<div class="card">
+<img src="pool.jpg" class="card-img-top">
+<div class="card-body">
+<h5>Recreation Department</h5>
+<p>Swimming pool facility for relaxation and entertainment.</p>
+</div>
+</div>
+</div>
+
+<div class="col-md-3">
+<div class="card">
+<img src="restaurant.jpg" class="card-img-top">
+<div class="card-body">
+<h5>Food & Beverage Department</h5>
+<p>Provides quality food and dining services for guests.</p>
+</div>
+</div>
+</div>
+
+<div class="col-md-3">
+<div class="card">
+<img src="parking.jpg" class="card-img-top">
+<div class="card-body">
+<h5>Transport Department</h5>
+<p>Safe and secure parking area for customers.</p>
+</div>
+</div>
+</div>
+
+<div class="col-md-3">
+<div class="card">
+<img src="gym.jpg" class="card-img-top">
+<div class="card-body">
+<h5>Fitness Department</h5>
+<p>Modern gym equipment for health and fitness activities.</p>
+</div>
+</div>
+</div>
+
+<div class="col-md-3">
+<div class="card">
+<img src="laundry.jpg" class="card-img-top">
+<div class="card-body">
+<h5>Housekeeping Department</h5>
+<p>Laundry and cleaning services for guest convenience.</p>
+</div>
+</div>
+</div>
+
+<div class="col-md-3">
+<div class="card">
+<img src="roomservice.jpg" class="card-img-top">
+<div class="card-body">
+<h5>Guest Service Department</h5>
+<p>24/7 room service available for all guests.</p>
+</div>
+</div>
+</div>
+
+<div class="col-md-3">
+<div class="card">
+<img src="banquet.jpg" class="card-img-top">
+<div class="card-body">
+<h5>Event Management Department</h5>
+<p>Banquet hall available for meetings and celebrations.</p>
+</div>
+</div>
+</div>
+</div>
+
+<div id="rooms" class="page container py-5">
+<h2>Rooms</h2>
+<div class="row g-3">
+<div class="col-md-4"><div class="card p-3"><h4>Standard Room</h4><p>₹1500</p></div></div>
+<div class="col-md-4"><div class="card p-3"><h4>Deluxe Room</h4><p>₹2500</p></div></div>
+<div class="col-md-4"><div class="card p-3"><h4>Suite Room</h4><p>₹4000</p></div></div>
+<div class="col-md-4"><div class="card p-3"><h4>Family Room</h4><p>₹3500</p></div></div>
+<div class="col-md-4"><div class="card p-3"><h4>Executive Room</h4><p>₹4500</p></div></div>
+<div class="col-md-4"><div class="card p-3"><h4>Presidential Suite</h4><p>₹8000</p></div></div>
+</div>
+</div>
+
+<div id="gallery" class="page container py-5">
+<h2>Gallery</h2>
+<div class="row g-3 gallery">
+<div class="col-md-3"><img class="rounded" src="https://picsum.photos/401/250"></div><div class="col-md-3"><img class="rounded" src="https://picsum.photos/402/250"></div><div class="col-md-3"><img class="rounded" src="https://picsum.photos/403/250"></div><div class="col-md-3"><img class="rounded" src="https://picsum.photos/404/250"></div><div class="col-md-3"><img class="rounded" src="https://picsum.photos/405/250"></div><div class="col-md-3"><img class="rounded" src="https://picsum.photos/406/250"></div><div class="col-md-3"><img class="rounded" src="https://picsum.photos/407/250"></div><div class="col-md-3"><img class="rounded" src="https://picsum.photos/408/250"></div>
+</div></div>
+
+<div id="booking" class="page container py-5">
+<h2>Advanced Booking Form</h2>
+<form id="bookingForm">
+<input class="form-control mb-2" id="name" placeholder="Customer Name" required>
+<input class="form-control mb-2" placeholder="Mobile Number" required>
+<input class="form-control mb-2" placeholder="Email Address" required>
+<input class="form-control mb-2" type="date" required>
+<input class="form-control mb-2" type="date" required>
+<input class="form-control mb-2" placeholder="Number of Guests" required>
+<select class="form-select mb-2" id="room">
+<option value="1500">Standard Room</option>
+<option value="2500">Deluxe Room</option>
+<option value="4000">Suite Room</option>
+<option value="8000">Presidential Suite</option>
+</select>
+<input class="form-control mb-2" id="days" type="number" placeholder="Number of Days" required>
+<textarea class="form-control mb-2" placeholder="Special Request"></textarea>
+<button class="btn btn-primary">Confirm Booking</button>
+</form>
+<div id="result" class="mt-3"></div>
+</div>
+
+<div id="reviews" class="page container py-5">
+<h2>Customer Reviews & Feedback</h2>
+<div class="row g-3">
+<div class="col-md-4"><div class="card p-3"><h5>Guest 1</h5><p>⭐⭐⭐⭐⭐</p><p>Excellent hospitality, clean rooms and friendly staff.</p></div></div><div class="col-md-4"><div class="card p-3"><h5>Guest 2</h5><p>⭐⭐⭐⭐⭐</p><p>Excellent hospitality, clean rooms and friendly staff.</p></div></div><div class="col-md-4"><div class="card p-3"><h5>Guest 3</h5><p>⭐⭐⭐⭐⭐</p><p>Excellent hospitality, clean rooms and friendly staff.</p></div></div><div class="col-md-4"><div class="card p-3"><h5>Guest 4</h5><p>⭐⭐⭐⭐⭐</p><p>Excellent hospitality, clean rooms and friendly staff.</p></div></div><div class="col-md-4"><div class="card p-3"><h5>Guest 5</h5><p>⭐⭐⭐⭐⭐</p><p>Excellent hospitality, clean rooms and friendly staff.</p></div></div><div class="col-md-4"><div class="card p-3"><h5>Guest 6</h5><p>⭐⭐⭐⭐⭐</p><p>Excellent hospitality, clean rooms and friendly staff.</p></div></div><div class="col-md-4"><div class="card p-3"><h5>Guest 7</h5><p>⭐⭐⭐⭐⭐</p><p>Excellent hospitality, clean rooms and friendly staff.</p></div></div><div class="col-md-4"><div class="card p-3"><h5>Guest 8</h5><p>⭐⭐⭐⭐⭐</p><p>Excellent hospitality, clean rooms and friendly staff.</p></div></div><div class="col-md-4"><div class="card p-3"><h5>Guest 9</h5><p>⭐⭐⭐⭐⭐</p><p>Excellent hospitality, clean rooms and friendly staff.</p></div></div>
+</div>
+<h3 class="mt-5">Guest Testimonials</h3>
+
+<div class="row g-3">
+
+<div class="col-md-6">
+<div class="card p-3">
+<h5>Priya S ⭐⭐⭐⭐⭐</h5>
+<p>
+The rooms were extremely clean and comfortable.
+Staff members were very helpful and the food quality was excellent.
+</p>
+</div>
+</div>
+
+<div class="col-md-6">
+<div class="card p-3">
+<h5>Arun K ⭐⭐⭐⭐⭐</h5>
+<p>
+Best hotel experience. Swimming pool and gym facilities were outstanding.
+Highly recommended.
+</p>
+</div>
+</div>
+
+<div class="col-md-6">
+<div class="card p-3">
+<h5>Divya R ⭐⭐⭐⭐⭐</h5>
+<p>
+Luxury rooms with beautiful interior design.
+Customer service was professional.
+</p>
+</div>
+</div>
+
+<div class="col-md-6">
+<div class="card p-3">
+<h5>Karthik M ⭐⭐⭐⭐</h5>
+<p>
+Food was delicious and room service was available anytime.
+Very satisfied with my stay.
+</p>
+</div>
+</div>
+
+</div>
+
+<hr>
+
+<h3>Submit Your Feedback</h3>
+
+<form>
+<input class="form-control mb-2" placeholder="Full Name">
+
+<input class="form-control mb-2" placeholder="Email Address">
+
+<select class="form-select mb-2">
+<option>⭐⭐⭐⭐⭐ Excellent</option>
+<option>⭐⭐⭐⭐ Good</option>
+<option>⭐⭐⭐ Average</option>
+<option>⭐⭐ Poor</option>
+</select>
+
+<textarea class="form-control mb-2" rows="5"
+placeholder="Share your experience with Royal Stay Hotel"></textarea>
+
+<button class="btn btn-success">
+Submit Feedback
+</button>
+</form>
+</div>
+
+<div id="contact" class="page container py-5">
+<h2>Contact Us</h2>
+
+<p><strong>Royal Stay Hotel</strong></p>
+
+<p>📍 No.25 Anna Salai, Chennai, Tamil Nadu - 600002</p>
+
+<p>📞 Reception : +91 98765 43210</p>
+
+<p>📞 Booking Desk : +91 98765 43211</p>
+
+<p>☎ Landline : 044-23456789</p>
+
+<p>📧 reservations@royalstayhotel.com</p>
+
+<p>🌐 www.royalstayhotel.com</p>
+
+<p>🕒 Open 24 Hours</p>
+</div>
+
+<footer>© 2026 Royal Stay Hotel Management System Internship Project</footer>
+<script>
+function showPage(id){document.querySelectorAll('.page').forEach(p=>p.classList.remove('active'));document.getElementById(id).classList.add('active');}
+document.getElementById('bookingForm').addEventListener('submit',function(e){e.preventDefault();let n=name.value;let p=parseInt(room.value);let d=parseInt(days.value);result.innerHTML='<div class="alert alert-success">Booking Confirmed for '+n+'<br>Total Amount: ₹'+(p*d)+'</div>';});
+</script>
+</body></html>
