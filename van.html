@@ -1,0 +1,803 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Royal Wheels Van Rental</title>
+
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+
+<style>
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+}
+
+body{
+font-family:Poppins,sans-serif;
+background:#f4f7fb;
+padding-top:145px;
+}
+
+/*================ HEADER ================*/
+
+.header{
+width:100%;
+position:fixed;
+top:0;
+left:0;
+background:#0d1b2a;
+z-index:999;
+box-shadow:0 5px 15px rgba(0,0,0,.2);
+}
+
+.header-top{
+height:90px;
+display:flex;
+align-items:center;
+justify-content:center;
+position:relative;
+}
+
+.logo-box{
+position:absolute;
+left:25px;
+}
+
+.logo{
+width:70px;
+height:70px;
+object-fit:contain;
+}
+
+.rental-name h1{
+font-size:38px;
+font-weight:bold;
+font-family:Georgia,serif;
+color:#ffd700;
+letter-spacing:2px;
+margin:0;
+}
+
+/*================ MENU ================*/
+
+.menu-bar{
+display:flex;
+justify-content:center;
+gap:35px;
+background:#1b263b;
+padding:15px;
+}
+
+.menu-bar a{
+text-decoration:none;
+color:white;
+font-size:18px;
+cursor:pointer;
+transition:.3s;
+font-weight:500;
+}
+
+.menu-bar a:hover{
+color:#ffd700;
+transform:translateY(-3px);
+}
+
+/*================ PAGE ================*/
+
+.page{
+display:none;
+}
+
+.page.active{
+display:block;
+}
+
+/*================ HERO ================*/
+
+.hero{
+
+height:90vh;
+
+background:url("https://images.unsplash.com/photo-1519641471654-76ce0107ad1b?auto=format&fit=crop&w=1400&q=80") center center;
+
+background-size:cover;
+
+display:flex;
+
+justify-content:center;
+
+align-items:center;
+
+flex-direction:column;
+
+text-align:center;
+
+color:white;
+
+}
+
+.hero h1{
+font-size:55px;
+font-weight:bold;
+text-shadow:2px 2px 10px black;
+}
+
+.hero p{
+font-size:22px;
+margin:20px 0;
+}
+
+.hero .btn{
+padding:12px 35px;
+font-size:18px;
+border-radius:30px;
+}
+
+/*================ CARDS ================*/
+
+.info-card{
+
+border:none;
+
+border-radius:15px;
+
+transition:.4s;
+
+}
+
+.info-card:hover{
+
+transform:translateY(-10px);
+
+box-shadow:0 15px 30px rgba(0,0,0,.2);
+
+}
+
+.info-card h2{
+
+font-size:40px;
+
+color:#0d6efd;
+
+font-weight:bold;
+
+}
+
+.info-card p{
+
+font-size:18px;
+
+}
+
+/*================ FOOTER ================*/
+
+footer{
+
+background:#0d1b2a;
+
+color:white;
+
+text-align:center;
+
+padding:18px;
+
+margin-top:40px;
+
+}
+
+/*================ WHATSAPP ================*/
+
+.whatsapp-btn{
+
+position:fixed;
+
+bottom:20px;
+
+right:20px;
+
+width:60px;
+
+height:60px;
+
+border-radius:50%;
+
+background:#25d366;
+
+display:flex;
+
+justify-content:center;
+
+align-items:center;
+
+text-decoration:none;
+
+font-size:28px;
+
+color:white;
+
+z-index:999;
+
+box-shadow:0 5px 15px rgba(0,0,0,.3);
+
+}
+/*================ ABOUT =================*/
+
+.about-title{
+font-size:38px;
+font-weight:bold;
+color:#ffc107;
+text-align:center;
+margin-bottom:30px;
+}
+
+.about-subtitle{
+font-size:28px;
+font-weight:bold;
+color:#0d6efd;
+margin-bottom:15px;
+}
+
+.about-text{
+font-size:17px;
+line-height:1.8;
+color:white;
+}
+
+.about-list{
+list-style:none;
+padding:0;
+}
+
+.about-list li{
+padding:8px 0;
+font-size:17px;
+color:white;
+}
+
+/*================ VAN CARDS =================*/
+
+.van-card{
+border:none;
+border-radius:15px;
+overflow:hidden;
+transition:.4s;
+box-shadow:0 5px 15px rgba(0,0,0,.2);
+height:100%;
+}
+
+.van-card:hover{
+transform:translateY(-10px);
+box-shadow:0 15px 30px rgba(0,0,0,.3);
+}
+
+.van-img{
+height:220px;
+object-fit:cover;
+}
+
+.price{
+font-size:22px;
+font-weight:bold;
+color:#0d6efd;
+}
+
+.badge-status{
+position:absolute;
+top:10px;
+left:10px;
+padding:6px 12px;
+border-radius:20px;
+font-size:13px;
+color:white;
+font-weight:bold;
+}
+
+.available{
+background:green;
+}
+
+.booked{
+background:red;
+}
+
+</style>
+
+</head>
+
+<body>
+
+<!-- HEADER -->
+
+<header class="header">
+
+<div class="header-top">
+
+<div class="logo-box">
+
+<img src="logo.png" class="logo">
+
+</div>
+
+<div class="rental-name">
+
+<h1>🚐 ROYAL WHEELS VAN RENTAL 🚐</h1>
+
+</div>
+
+</div>
+
+<nav class="menu-bar">
+
+<a onclick="showPage('home')">Home</a>
+
+<a onclick="showPage('about')">About</a>
+
+<a onclick="showPage('vans')">Vans</a>
+
+<a onclick="showPage('services')">Services</a>
+
+<a onclick="showPage('booking')">Booking</a>
+
+<a onclick="showPage('reviews')">Reviews</a>
+
+<a onclick="showPage('contact')">Contact</a>
+
+</nav>
+
+</header>
+
+<!-- HOME -->
+
+<div id="home" class="page active">
+
+<section class="hero">
+
+<h1>Travel With Comfort</h1>
+
+<p>Affordable • Safe • Luxury Van Rental Services</p>
+
+<button class="btn btn-warning" onclick="showPage('booking')">
+
+Book Your Van
+
+</button>
+
+</section>
+
+<section class="container my-5">
+
+<div class="row text-center g-4">
+
+<div class="col-md-3">
+
+<div class="card info-card p-4">
+
+<h2>80+</h2>
+
+<p>Available Vans</p>
+
+</div>
+
+</div>
+
+<div class="col-md-3">
+
+<div class="card info-card p-4">
+
+<h2>5000+</h2>
+
+<p>Happy Customers</p>
+
+</div>
+
+</div>
+
+<div class="col-md-3">
+
+<div class="card info-card p-4">
+
+<h2>24/7</h2>
+
+<p>Customer Support</p>
+
+</div>
+
+</div>
+
+<div class="col-md-3">
+
+<div class="card info-card p-4">
+
+<h2>10+</h2>
+
+<p>Years Experience</p>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+</div>
+
+<!-- WhatsApp -->
+
+<a href="https://wa.me/919876543210"
+
+class="whatsapp-btn"
+
+target="_blank">
+
+💬
+
+</a>
+
+<script>
+
+function showPage(id){
+
+document.querySelectorAll(".page").forEach(page=>{
+
+page.classList.remove("active");
+
+});
+
+document.getElementById(id).classList.add("active");
+
+window.scrollTo({
+
+top:0,
+
+behavior:"smooth"
+
+});
+
+}
+<!-- ABOUT -->
+
+<div id="about" class="page container py-5">
+
+<h2 class="about-title">🚐 About Royal Wheels Van Rental</h2>
+
+<div class="row align-items-center">
+
+<div class="col-md-6">
+
+<img src="about.jpg" class="img-fluid rounded shadow">
+
+</div>
+
+<div class="col-md-6">
+
+<h3 class="about-subtitle">
+
+Travel Safely With Us
+
+</h3>
+
+<p class="about-text">
+
+Royal Wheels Van Rental provides safe, comfortable, and affordable transportation services for families, tourists, schools, offices, weddings, and corporate trips.
+
+</p>
+
+<p class="about-text">
+
+Our experienced drivers, well-maintained vehicles, and 24/7 customer support ensure every journey is enjoyable and stress-free.
+
+</p>
+
+<ul class="about-list">
+
+<li>✔ Luxury Vans</li>
+
+<li>✔ Tourist Packages</li>
+
+<li>✔ Corporate Travel</li>
+
+<li>✔ School Transportation</li>
+
+<li>✔ Wedding Van Rental</li>
+
+<li>✔ Airport Pickup & Drop</li>
+
+<li>✔ 24×7 Customer Support</li>
+
+</ul>
+
+<button class="btn btn-warning"
+
+onclick="showPage('booking')">
+
+Book Your Van
+
+</button>
+
+</div>
+
+</div>
+
+</div>
+
+</script>
+<!-- ABOUT -->
+
+<div id="about" class="page container py-5">
+
+<h2 class="about-title">🚐 About Royal Wheels Van Rental</h2>
+
+<div class="row align-items-center">
+
+<div class="col-md-6">
+
+<img src="about.jpg" class="img-fluid rounded shadow">
+
+</div>
+
+<div class="col-md-6">
+
+<h3 class="about-subtitle">
+
+Travel Safely With Us
+
+</h3>
+
+<p class="about-text">
+
+Royal Wheels Van Rental provides safe, comfortable, and affordable transportation services for families, tourists, schools, offices, weddings, and corporate trips.
+
+</p>
+
+<p class="about-text">
+
+Our experienced drivers, well-maintained vehicles, and 24/7 customer support ensure every journey is enjoyable and stress-free.
+
+</p>
+
+<ul class="about-list">
+
+<li>✔ Luxury Vans</li>
+
+<li>✔ Tourist Packages</li>
+
+<li>✔ Corporate Travel</li>
+
+<li>✔ School Transportation</li>
+
+<li>✔ Wedding Van Rental</li>
+
+<li>✔ Airport Pickup & Drop</li>
+
+<li>✔ 24×7 Customer Support</li>
+
+</ul>
+
+<button class="btn btn-warning"
+
+onclick="showPage('booking')">
+
+Book Your Van
+
+</button>
+
+</div>
+
+</div>
+
+</div>
+<div id="vans" class="page container py-5">
+
+<h2 class="text-center text-warning mb-5">
+
+🚐 AVAILABLE VANS
+
+</h2>
+
+<div class="row g-4">
+    <div class="col-md-3">
+
+<div class="card van-card position-relative">
+
+<span class="badge-status available">
+
+Available
+
+</span>
+
+<img src="van1.jpg" class="van-img">
+
+<div class="card-body">
+
+<h5>Mini Van</h5>
+
+<p>👨‍👩‍👧 7 Seats</p>
+
+<p>❄ AC</p>
+
+<p>👨 Driver Included</p>
+
+<p class="price">₹2500 / Day</p>
+
+<button class="btn btn-primary w-100"
+
+onclick="showPage('booking')">
+
+Book Now
+
+</button>
+
+</div>
+
+</div>
+
+</div>
+<div class="col-md-3">
+
+<div class="card van-card position-relative">
+
+<span class="badge-status available">
+
+Available
+
+</span>
+
+<img src="van2.jpg" class="van-img">
+
+<div class="card-body">
+
+<h5>Tempo Traveller</h5>
+
+<p>12 Seats</p>
+
+<p>AC</p>
+
+<p>Driver Included</p>
+
+<p class="price">₹4500 / Day</p>
+
+<button class="btn btn-primary w-100"
+
+onclick="showPage('booking')">
+
+Book Now
+
+</button>
+
+</div>
+
+</div>
+
+</div>
+<div class="col-md-3">
+
+<div class="card van-card position-relative">
+
+<span class="badge-status booked">
+
+Booked
+
+</span>
+
+<img src="van3.jpg" class="van-img">
+
+<div class="card-body">
+
+<h5>Luxury Van</h5>
+
+<p>10 Seats</p>
+
+<p>Premium AC</p>
+
+<p>Driver Included</p>
+
+<p class="price">₹6000 / Day</p>
+
+<button class="btn btn-secondary w-100"
+
+disabled>
+
+Not Available
+
+</button>
+
+</div>
+
+</div>
+
+</div>
+<div class="col-md-3">
+
+<div class="card van-card position-relative">
+
+<span class="badge-status available">
+
+Available
+
+</span>
+
+<img src="van4.jpg" class="van-img">
+
+<div class="card-body">
+
+<h5>Tourist Van</h5>
+
+<p>15 Seats</p>
+
+<p>AC</p>
+
+<p>Driver Included</p>
+
+<p class="price">₹5500 / Day</p>
+
+<button class="btn btn-primary w-100"
+
+onclick="showPage('booking')">
+
+Book Now
+
+</button>
+
+</div>
+
+</div>
+
+</div>
+<div class="col-md-3">
+<div class="card van-card position-relative">
+<span class="badge-status available">Available</span>
+<img src="van5.jpg" class="van-img">
+<div class="card-body">
+<h5>Family Van</h5>
+<p>8 Seats</p>
+<p>AC</p>
+<p>₹3000 / Day</p>
+<button class="btn btn-primary w-100">Book Now</button>
+</div>
+</div>
+</div>
+<div class="col-md-3">
+<div class="card van-card position-relative">
+<span class="badge-status booked">Booked</span>
+<img src="van6.jpg" class="van-img">
+<div class="card-body">
+<h5>School Van</h5>
+<p>20 Seats</p>
+<p>Safety Equipped</p>
+<p>₹4000 / Day</p>
+<button class="btn btn-secondary w-100" disabled>Booked</button>
+</div>
+</div>
+</div>
+<div class="col-md-3">
+<div class="card van-card position-relative">
+<span class="badge-status available">Available</span>
+<img src="van7.jpg" class="van-img">
+<div class="card-body">
+<h5>Corporate Van</h5>
+<p>14 Seats</p>
+<p>Luxury Interior</p>
+<p>₹5200 / Day</p>
+<button class="btn btn-primary w-100">Book Now</button>
+</div>
+</div>
+</div>
+<div class="col-md-3">
+<div class="card van-card position-relative">
+<span class="badge-status available">Available</span>
+<img src="van8.jpg" class="van-img">
+<div class="card-body">
+<h5>Cargo Van</h5>
+<p>Goods Transport</p>
+<p>Heavy Duty</p>
+<p>₹3500 / Day</p>
+<button class="btn btn-primary w-100">Book Now</button>
+</div>
+</div>
+</div>
+
