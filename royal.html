@@ -364,6 +364,188 @@ transform:scale(1.05);
 border-radius:20px;
 padding:30px;
 }
+
+
+/* RESPONSIVE DESIGN + MOBILE HAMBURGER MENU */
+*{box-sizing:border-box;}
+html{scroll-behavior:smooth;}
+body{overflow-x:hidden;}
+img{max-width:100%;height:auto;}
+.menu-toggle{display:none;border:none;background:transparent;color:white;font-size:30px;cursor:pointer;position:absolute;right:18px;top:24px;z-index:1100;}
+#booking{width:100%;}
+#booking form{width:100%;max-width:700px;margin:0 auto;padding:30px;}
+#booking form label{display:block;margin-top:8px;margin-bottom:5px;font-weight:600;}
+#booking form input,#booking form select,#booking form button{width:100%;min-height:45px;}
+#booking form input,#booking form select{font-size:16px;}
+.room-card,.facility-card,.contact-card{width:100%;}
+.about-text,.contact-card p,.card p,footer p{overflow-wrap:break-word;}
+
+@media (min-width:577px) and (max-width:991px){
+.hotel-name h1{font-size:30px;}
+.menu-bar{gap:12px 20px;padding:12px 15px;flex-wrap:wrap;}
+.menu-bar a{font-size:16px;}
+.hero{background-attachment:scroll;}
+}
+
+@media (max-width:576px){
+body{padding-top:85px;}
+.header-top{height:80px;min-height:80px;padding:8px 15px;}
+.logo-box{left:12px;}
+.logo{width:52px;height:52px;}
+.hotel-name h1{font-size:20px;letter-spacing:1px;padding:0 45px;line-height:1.2;}
+.menu-toggle{display:block;}
+.menu-bar{display:none;position:absolute;top:80px;left:0;width:100%;background:#29485d;padding:12px 15px 18px;flex-direction:column;align-items:stretch;gap:0;box-shadow:0 8px 18px rgba(0,0,0,.25);}
+.menu-bar.show{display:flex;}
+.menu-bar a{display:block;width:100%;padding:11px 10px;font-size:16px;text-align:center;border-bottom:1px solid rgba(255,255,255,.12);}
+.menu-bar a:last-child{border-bottom:none;}
+.hero{min-height:70vh;height:auto;padding:60px 15px;background-attachment:scroll;}
+.hero h1{font-size:28px;}
+.hero p{font-size:16px;}
+.about-title{font-size:27px;}
+.about-subtitle{font-size:21px;}
+.about-text{font-size:14px;line-height:1.6;}
+.room-img{height:190px;}
+.facility-card img{height:190px;}
+#booking{padding-left:15px;padding-right:15px;}
+#booking form{padding:20px 15px;border-radius:15px;}
+#booking h2{font-size:27px;}
+.contact-card{padding:18px;}
+.whatsapp-btn{width:55px;height:55px;right:15px;bottom:15px;font-size:25px;}
+.footer-social{display:flex;justify-content:center;flex-wrap:wrap;gap:5px;}
+.footer-social a{font-size:15px;margin:5px 8px;}
+}
+
+@media (min-width:1200px){.hero h1{font-size:52px;}.hero p{font-size:22px;}}
+
+/* Booking validation */
+#bookingForm .form-control:focus,
+#bookingForm .form-select:focus{
+    box-shadow:0 0 0 .2rem rgba(13,110,253,.15);
+}
+
+#bookingForm .is-invalid{
+    border:2px solid #dc3545;
+}
+
+#bookingForm .is-invalid:focus{
+    box-shadow:0 0 0 .2rem rgba(220,53,69,.15);
+}
+
+#result .alert{
+    border-radius:12px;
+}
+
+/* PROFESSIONAL BOOKING UI */
+.booking-intro{
+    max-width:700px;
+    margin:0 auto 18px;
+    padding:18px 20px;
+    background:linear-gradient(135deg,#f8fbff,#eef6ff);
+    border:1px solid #dbeafe;
+    border-radius:16px;
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    gap:15px;
+}
+.booking-kicker{
+    display:inline-block;
+    font-size:11px;
+    font-weight:800;
+    letter-spacing:1.5px;
+    color:#0d6efd;
+    margin-bottom:5px;
+}
+.booking-intro h3{
+    color:#17324d;
+    font-weight:700;
+}
+.booking-intro p{
+    color:#667085;
+    font-size:14px;
+}
+.booking-badge{
+    white-space:nowrap;
+    background:white;
+    color:#198754;
+    border:1px solid #d1e7dd;
+    border-radius:50px;
+    padding:8px 12px;
+    font-size:12px;
+    font-weight:700;
+}
+#bookingForm{
+    border:1px solid #e6eaf0;
+}
+#bookingForm .form-control,
+#bookingForm .form-select{
+    border-radius:10px;
+    border:1px solid #ced4da;
+    min-height:46px;
+    transition:.2s;
+}
+#bookingForm .form-control:focus,
+#bookingForm .form-select:focus{
+    border-color:#0d6efd;
+    box-shadow:0 0 0 .2rem rgba(13,110,253,.12);
+}
+#bookingForm button{
+    min-height:48px;
+    font-weight:700;
+}
+.booking-confirmation{
+    border-radius:16px;
+    border:1px solid #b7ebc6;
+    background:#f0fff4;
+    padding:20px;
+}
+.booking-confirmation .booking-id{
+    font-weight:800;
+    color:#146c43;
+    letter-spacing:.5px;
+}
+.booking-history{
+    max-width:700px;
+    margin:0 auto;
+    background:#fff;
+    border:1px solid #e6eaf0;
+    border-radius:16px;
+    padding:18px;
+}
+.booking-history h5{
+    color:#17324d;
+}
+.booking-history-item{
+    padding:12px 0;
+    border-bottom:1px solid #edf0f3;
+}
+.booking-history-item:last-child{
+    border-bottom:0;
+}
+.booking-history-item strong{
+    color:#17324d;
+}
+.history-actions{
+    display:flex;
+    justify-content:flex-end;
+    margin-top:12px;
+}
+#bookingAlert .alert{
+    max-width:700px;
+    margin:0 auto;
+    border-radius:12px;
+}
+@media(max-width:576px){
+    .booking-intro{
+        flex-direction:column;
+        align-items:flex-start;
+        padding:16px;
+    }
+    .booking-badge{
+        font-size:11px;
+    }
+}
+
 </style>
 </head>
 
@@ -383,8 +565,11 @@ padding:30px;
         </div>
     </div>
 
+    <!-- Mobile Hamburger Button -->
+    <button class="menu-toggle" type="button" onclick="toggleMenu()" aria-label="Open navigation menu" aria-expanded="false">☰</button>
+
     <!-- Navigation -->
-    <nav class="menu-bar">
+    <nav class="menu-bar" id="mainMenu">
         <a onclick="showPage('home')">Home</a>
         <a onclick="showPage('about')">About</a>
         <a onclick="showPage('rooms')">Rooms</a>
@@ -407,28 +592,28 @@ padding:30px;
 
 <div class="row text-center">
 
-<div class="col-md-3">
+<div class="col-12 col-sm-6 col-lg-3">
 <div class="card p-4 shadow">
 <h2>120+</h2>
 <p>Luxury Rooms</p>
 </div>
 </div>
 
-<div class="col-md-3">
+<div class="col-12 col-sm-6 col-lg-3">
 <div class="card p-4 shadow">
 <h2>5000+</h2>
 <p>Happy Guests</p>
 </div>
 </div>
 
-<div class="col-md-3">
+<div class="col-12 col-sm-6 col-lg-3">
 <div class="card p-4 shadow">
 <h2>24/7</h2>
 <p>Room Service</p>
 </div>
 </div>
 
-<div class="col-md-3">
+<div class="col-12 col-sm-6 col-lg-3">
 <div class="card p-4 shadow">
 <h2>5⭐</h2>
 <p>Customer Rating</p>
@@ -455,13 +640,13 @@ target="_blank">
 <div class="row align-items-center g-4">
 
 <!-- IMAGE -->
-<div class="col-md-6">
+<div class="col-12 col-lg-6">
 <img src="hot3.avif"
 class="img-fluid rounded shadow">
 </div>
 
 <!-- CONTENT -->
-<div class="col-md-6">
+<div class="col-12 col-lg-6">
 
 <h4 class="about-subtitle"><b>Welcome to Luxury Experience</b></h4>
 
@@ -501,7 +686,7 @@ Book Now
 <div class="row g-4">
 
 <!-- ROOM 1 -->
-<div class="col-md-4">
+<div class="col-12 col-sm-6 col-lg-4">
 <div class="card room-card position-relative">
 
 <span class="badge-status available">Available</span>
@@ -522,7 +707,7 @@ Book Now
 </div>
 
 <!-- ROOM 2 -->
-<div class="col-md-4">
+<div class="col-12 col-sm-6 col-lg-4">
 <div class="card room-card position-relative">
 
 <span class="badge-status booked">Booked</span>
@@ -541,7 +726,7 @@ Book Now
 </div>
 
 <!-- ROOM 3 -->
-<div class="col-md-4">
+<div class="col-12 col-sm-6 col-lg-4">
 <div class="card room-card position-relative">
 
 <span class="badge-status available">Available</span>
@@ -562,7 +747,7 @@ Book Now
 </div>
 
 <!-- ROOM 4 -->
-<div class="col-md-4">
+<div class="col-12 col-sm-6 col-lg-4">
 <div class="card room-card position-relative">
 
 <span class="badge-status available">Available</span>
@@ -583,7 +768,7 @@ Book Now
 </div>
 
 <!-- ROOM 5 -->
-<div class="col-md-4">
+<div class="col-12 col-sm-6 col-lg-4">
 <div class="card room-card position-relative">
 
 <span class="badge-status booked">Booked</span>
@@ -602,7 +787,7 @@ Book Now
 </div>
 
 <!-- ROOM 6 -->
-<div class="col-md-4">
+<div class="col-12 col-sm-6 col-lg-4">
 <div class="card room-card position-relative">
 
 <span class="badge-status available">Available</span>
@@ -633,7 +818,7 @@ Book Now
 <div class="row g-4">
 
 <!-- WiFi -->
-<div class="col-md-3">
+<div class="col-12 col-sm-6 col-lg-3">
 <div class="card facility-card">
 <img src="wifi.jpg" class="card-img-top">
 <div class="card-body">
@@ -644,7 +829,7 @@ Book Now
 </div>
 
 <!-- Swimming Pool -->
-<div class="col-md-3">
+<div class="col-12 col-sm-6 col-lg-3">
 <div class="card facility-card">
 <img src="swing.avif" class="card-img-top">
 <div class="card-body">
@@ -655,7 +840,7 @@ Book Now
 </div>
 
 <!-- Restaurant -->
-<div class="col-md-3">
+<div class="col-12 col-sm-6 col-lg-3">
 <div class="card facility-card">
 <img src="buq.jpg" class="card-img-top">
 <div class="card-body">
@@ -666,7 +851,7 @@ Book Now
 </div>
 
 <!-- Gym -->
-<div class="col-md-3">
+<div class="col-12 col-sm-6 col-lg-3">
 <div class="card facility-card">
 <img src="gym.jpg" class="card-img-top">
 <div class="card-body">
@@ -677,7 +862,7 @@ Book Now
 </div>
 
 <!-- Room Service -->
-<div class="col-md-3">
+<div class="col-12 col-sm-6 col-lg-3">
 <div class="card facility-card">
 <img src="ser.jpg" class="card-img-top">
 <div class="card-body">
@@ -688,7 +873,7 @@ Book Now
 </div>
 
 <!-- Parking -->
-<div class="col-md-3">
+<div class="col-12 col-sm-6 col-lg-3">
 <div class="card facility-card">
 <img src="park.jpg" class="card-img-top">
 <div class="card-body">
@@ -699,7 +884,7 @@ Book Now
 </div>
 
 <!-- Spa -->
-<div class="col-md-3">
+<div class="col-12 col-sm-6 col-lg-3">
 <div class="card facility-card">
 <img src="spa.jpg" class="card-img-top">
 <div class="card-body">
@@ -710,7 +895,7 @@ Book Now
 </div>
 
 <!-- Banquet Hall -->
-<div class="col-md-3">
+<div class="col-12 col-sm-6 col-lg-3">
 <div class="card facility-card">
 <img src="bb.jpg" class="card-img-top">
 <div class="card-body">
@@ -729,9 +914,9 @@ Book Now
 
 <h2 style="color:yellow;"><CENTER>BOOKING</CENTER></h2>
 
-<form onsubmit="book(event)" class="p-3 bg-white shadow rounded">
+<form id="bookingForm" onsubmit="book(event)" class="p-3 bg-white shadow rounded" novalidate>
 <label style="color:rgb(35, 15, 219);">Customer Name</label>
-<input id="name" class="form-control mb-2" placeholder="Name">
+<input id="name" class="form-control mb-2" placeholder="Name" required minlength="2" maxlength="50">
 <label style="color:rgb(35, 15, 219);"> Availabe Rooms</label>
 <select id="room" class="form-select mb-2">
 <option value="1500">Standard room</option>
@@ -742,11 +927,11 @@ Book Now
 <option value="4000">Single room</option>
 </select>
 
-<label style="color:rgb(35, 15, 219);">Check-in Date</label><input id="inDate" type="date" class="form-control mb-2">
+<label style="color:rgb(35, 15, 219);">Check-in Date</label><input id="inDate" type="date" class="form-control mb-2" required>
 
-<label style="color:rgb(35, 15, 219);">Check-out Date</label><input id="outDate" type="date" class="form-control mb-2">
+<label style="color:rgb(35, 15, 219);">Check-out Date</label><input id="outDate" type="date" class="form-control mb-2" required>
 <label style="color:rgb(35, 15, 219);">Members Count</label>
-<input id="members" type="number" class="form-control mb-2" placeholder="No of members">
+<input id="members" type="number" class="form-control mb-2" placeholder="No of members" min="1" max="20" required>
 <label style="color:rgb(35,15,219);">Mobile Number</label>
 
 <input
@@ -768,13 +953,15 @@ Book Now
     required>
 
 <label style="color:rgb(35, 15, 219);">Address</label>
-<input id="address" class="form-control mb-2" placeholder="Enter address">
+<input id="address" class="form-control mb-2" placeholder="Enter address" required minlength="5" maxlength="150">
 
 <button class="btn btn-primary w-100">Book Now</button>
 
 </form>
 
 <div id="result" class="mt-3"></div>
+<div id="latestBooking" class="mt-3"></div>
+<div id="bookingHistory" class="mt-3"></div>
 <!-- TOAST MESSAGE (IMPORTANT) -->
 <div id="toast" style="
 position:fixed;top:20px;right:20px;
@@ -796,7 +983,7 @@ z-index:9999;">
 <!-- NEW REVIEWS WILL APPEAR HERE -->
 
 <!-- Review 1 -->
-<div class="col-md-4">
+<div class="col-12 col-sm-6 col-lg-4">
 <div class="card shadow p-3">
 <h5> Kumar</h5>
 <p>⭐⭐⭐⭐⭐</p>
@@ -806,7 +993,7 @@ z-index:9999;">
 </div>
 
 <!-- Review 2 -->
-<div class="col-md-4">
+<div class="col-12 col-sm-6 col-lg-4">
 <div class="card shadow p-3">
 <h5>Priya S</h5>
 <p>⭐⭐⭐⭐</p>
@@ -816,7 +1003,7 @@ z-index:9999;">
 </div>
 
 <!-- Review 3 -->
-<div class="col-md-4">
+<div class="col-12 col-sm-6 col-lg-4">
 <div class="card shadow p-3">
 <h5>Rahul</h5>
 <p>⭐⭐⭐⭐⭐</p>
@@ -875,7 +1062,7 @@ z-index:9999;">
 <div class="row g-4">
 
 <!-- HOTEL INFO -->
-<div class="col-md-6">
+<div class="col-12 col-lg-6">
 <div class="contact-card hotel">
 
 <h4>🏨 Royal Stay Hotel</h4>
@@ -888,7 +1075,7 @@ z-index:9999;">
 </div>
 
 <!-- CONTACT DETAILS -->
-<div class="col-md-6">
+<div class="col-12 col-lg-6">
 <div class="contact-card info">
 
 <h4>📞 Get in Touch</h4>
@@ -902,7 +1089,7 @@ z-index:9999;">
 </div>
 
 <!-- MAP -->
-<div class="col-md-6">
+<div class="col-12 col-lg-6">
 <div class="contact-card map">
 
 <h4>🗺️ Location</h4>
@@ -915,7 +1102,7 @@ class="btn btn-primary w-100">
 </div>
 
 <!-- QUICK ACTION -->
-<div class="col-md-6">
+<div class="col-12 col-lg-6">
 <div class="contact-card action">
 
 <h4>⚡ Quick Actions</h4>
@@ -949,7 +1136,7 @@ let comment=document.getElementById("comment").value;
 let stars="⭐".repeat(Number(rating));
 
 let review=`
-<div class="col-md-4">
+<div class="col-12 col-sm-6 col-lg-4">
 <div class="card shadow p-3">
 <h5>${name}</h5>
 <p>${stars}</p>
@@ -970,44 +1157,232 @@ showToast("⭐ Review Submitted Successfully!");
 
 }
 
+function toggleMenu(){
+  const menu=document.getElementById("mainMenu");
+  const button=document.querySelector(".menu-toggle");
+  menu.classList.toggle("show");
+  const isOpen=menu.classList.contains("show");
+  button.setAttribute("aria-expanded",isOpen);
+  button.setAttribute("aria-label",isOpen ? "Close navigation menu" : "Open navigation menu");
+  button.innerHTML=isOpen ? "✕" : "☰";
+}
+
 function showPage(id){
   document.querySelectorAll('.page').forEach(p=>p.classList.remove('active'));
   document.getElementById(id).classList.add('active');
+  const menu=document.getElementById("mainMenu");
+  const button=document.querySelector(".menu-toggle");
+  if(menu.classList.contains("show")){
+    menu.classList.remove("show");
+    button.setAttribute("aria-expanded","false");
+    button.setAttribute("aria-label","Open navigation menu");
+    button.innerHTML="☰";
+  }
   window.scrollTo({top:0, behavior:"smooth"});
 }
 function book(e){
-    
-  e.preventDefault();
 
-  let name = document.getElementById("name").value;
-  let room = parseInt(document.getElementById("room").value);
-  let members = document.getElementById("members").value;
-  let inDate = document.getElementById("inDate").value;
-  let outDate = document.getElementById("outDate").value;
+    e.preventDefault();
 
-  // date difference (days calculate)
-  let date1 = new Date(inDate);
-  let date2 = new Date(outDate);
-  let diffTime = date2 - date1;
-  let days = diffTime / (1000 * 60 * 60 * 24);
+    const form = document.getElementById("bookingForm");
+    const submitBtn = form.querySelector("button[type='submit']");
 
-  if(days <= 0 || isNaN(days)){
-    alert("Please select correct dates");
-    return;
-  }
+    let name = document.getElementById("name").value.trim();
+    let roomSelect = document.getElementById("room");
+    let room = parseInt(roomSelect.value);
+    let roomName = roomSelect.options[roomSelect.selectedIndex].text;
+    let members = Number(document.getElementById("members").value);
+    let inDate = document.getElementById("inDate").value;
+    let outDate = document.getElementById("outDate").value;
+    let phone = document.getElementById("phone").value.trim();
+    let email = document.getElementById("email").value.trim();
+    let address = document.getElementById("address").value.trim();
 
-  let total = room * days;
+    /* Remove old invalid borders */
+    form.querySelectorAll(".is-invalid").forEach(el => el.classList.remove("is-invalid"));
 
-  document.getElementById("result").innerHTML =
-  `<div class="alert alert-success mt-3">
-    Booking Confirmed for <b>${name}</b><br>
-    Days: ${days}<br>
-    Total ₹${total}
-  </div>`;
-   showToast("🎉 Booking Successful!");
+    function invalid(id, message){
+        const field = document.getElementById(id);
+        field.classList.add("is-invalid");
+        field.focus();
+        showBookingAlert("danger", "❌ " + message);
+        return false;
+    }
+
+    if(name.length < 2) return invalid("name", "Please enter a valid customer name.");
+    if(!members || members < 1 || members > 20) return invalid("members", "Members count must be between 1 and 20.");
+    if(!/^[0-9]{10}$/.test(phone)) return invalid("phone", "Please enter a valid 10-digit mobile number.");
+    if(!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) return invalid("email", "Please enter a valid email address.");
+    if(address.length < 5) return invalid("address", "Please enter a valid address.");
+    if(!inDate) return invalid("inDate", "Please select a check-in date.");
+    if(!outDate) return invalid("outDate", "Please select a check-out date.");
+
+    let date1 = new Date(inDate);
+    let date2 = new Date(outDate);
+    let diffTime = date2 - date1;
+    let days = diffTime / (1000 * 60 * 60 * 24);
+
+    if(days <= 0 || isNaN(days)){
+        return invalid("outDate", "Check-out date must be after check-in date.");
+    }
+
+    let total = room * days;
+
+    /* Professional unique booking ID */
+    let bookingId = "RSH-" + Date.now().toString().slice(-8);
+
+    let booking = {
+        bookingId: bookingId,
+        name: name,
+        room: roomName,
+        pricePerNight: room,
+        members: members,
+        checkIn: inDate,
+        checkOut: outDate,
+        nights: days,
+        phone: phone,
+        email: email,
+        address: address,
+        total: total,
+        bookedAt: new Date().toLocaleString()
+    };
+
+    /* Save every valid booking */
+    let bookings = JSON.parse(localStorage.getItem("royalStayBookings")) || [];
+    bookings.push(booking);
+    localStorage.setItem("royalStayBookings", JSON.stringify(bookings));
+
+    /* Clear old validation state */
+    form.querySelectorAll(".is-invalid").forEach(el => el.classList.remove("is-invalid"));
+
+    /* Clear button loading state */
+    submitBtn.disabled = true;
+    submitBtn.innerHTML = "✓ Booking Confirmed";
+
+    document.getElementById("result").innerHTML =
+    `<div class="booking-confirmation mt-3 shadow-sm">
+        <div class="booking-id mb-2">✓ BOOKING CONFIRMED · ${bookingId}</div>
+        <h5 class="mb-3">Thank you, ${escapeHtml(name)}!</h5>
+        <div class="row g-2">
+            <div class="col-12 col-sm-6"><strong>Room:</strong> ${escapeHtml(roomName)}</div>
+            <div class="col-12 col-sm-6"><strong>Guests:</strong> ${members}</div>
+            <div class="col-12 col-sm-6"><strong>Check-in:</strong> ${inDate}</div>
+            <div class="col-12 col-sm-6"><strong>Check-out:</strong> ${outDate}</div>
+            <div class="col-12 col-sm-6"><strong>Nights:</strong> ${days}</div>
+            <div class="col-12 col-sm-6"><strong>Total:</strong> ₹${total}</div>
+        </div>
+        <hr>
+        <small class="text-muted">Your booking has been saved on this device.</small>
+    </div>`;
+
+    showLatestBooking();
+    showBookingHistory();
+    showToast("🎉 Booking " + bookingId + " saved successfully!");
+
+    form.reset();
+
+    setTimeout(function(){
+        submitBtn.disabled = false;
+        submitBtn.innerHTML = "Book Now";
+    }, 1500);
 }
 
-  function showToast(msg){
+  function escapeHtml(value){
+    return String(value).replace(/[&<>"']/g, function(char){
+        return {
+            "&":"&amp;",
+            "<":"&lt;",
+            ">":"&gt;",
+            '"':"&quot;",
+            "'":"&#039;"
+        }[char];
+    });
+}
+
+function showBookingAlert(type, message){
+    const box = document.getElementById("bookingAlert");
+    box.innerHTML = `<div class="alert alert-${type}" role="alert">${message}</div>`;
+    setTimeout(function(){
+        box.innerHTML = "";
+    }, 4000);
+}
+
+function showBookingHistory(){
+
+    let bookings = JSON.parse(localStorage.getItem("royalStayBookings")) || [];
+    const history = document.getElementById("bookingHistory");
+
+    if(bookings.length === 0){
+        history.innerHTML = "";
+        return;
+    }
+
+    const recent = bookings.slice(-3).reverse();
+
+    history.innerHTML =
+    `<div class="booking-history shadow-sm">
+        <h5>🧾 Recent Bookings</h5>
+        <p class="text-muted small">Your last ${recent.length} booking(s) saved on this device.</p>
+        ${recent.map(function(b){
+            return `<div class="booking-history-item">
+                <div class="d-flex justify-content-between gap-2 flex-wrap">
+                    <strong>${escapeHtml(b.bookingId || "Booking")}</strong>
+                    <span class="text-muted small">${escapeHtml(b.bookedAt)}</span>
+                </div>
+                <div>${escapeHtml(b.room)} · ${b.nights} night(s) · ₹${b.total}</div>
+            </div>`;
+        }).join("")}
+        <div class="history-actions">
+            <button type="button" class="btn btn-sm btn-outline-danger" onclick="clearBookingHistory()">
+                Clear Saved Bookings
+            </button>
+        </div>
+    </div>`;
+}
+
+function clearBookingHistory(){
+    if(confirm("Are you sure you want to clear all saved bookings on this device?")){
+        localStorage.removeItem("royalStayBookings");
+        document.getElementById("latestBooking").innerHTML = "";
+        document.getElementById("bookingHistory").innerHTML = "";
+        showToast("🗑️ Saved bookings cleared.");
+    }
+}
+
+function showLatestBooking(){
+
+    let bookings = JSON.parse(localStorage.getItem("royalStayBookings")) || [];
+
+    if(bookings.length === 0){
+        document.getElementById("latestBooking").innerHTML = "";
+        return;
+    }
+
+    let booking = bookings[bookings.length - 1];
+
+    document.getElementById("latestBooking").innerHTML =
+    `<div class="alert alert-info shadow-sm">
+        <h5>📋 Latest Booking Details</h5>
+        <p class="mb-1"><strong>Booking ID:</strong> ${escapeHtml(booking.bookingId || "RSH")}</p>
+        <p class="mb-1"><strong>Customer:</strong> ${escapeHtml(booking.name)}</p>
+        <p class="mb-1"><strong>Room:</strong> ${escapeHtml(booking.room)}</p>
+        <p class="mb-1"><strong>Check-in:</strong> ${escapeHtml(booking.checkIn)}</p>
+        <p class="mb-1"><strong>Check-out:</strong> ${escapeHtml(booking.checkOut)}</p>
+        <p class="mb-1"><strong>Nights:</strong> ${booking.nights}</p>
+        <p class="mb-1"><strong>Members:</strong> ${booking.members}</p>
+        <p class="mb-1"><strong>Mobile:</strong> ${escapeHtml(booking.phone)}</p>
+        <p class="mb-1"><strong>Email:</strong> ${escapeHtml(booking.email)}</p>
+        <p class="mb-1"><strong>Total:</strong> ₹${booking.total}</p>
+        <small>Saved: ${escapeHtml(booking.bookedAt)}</small>
+    </div>`;
+}
+
+document.addEventListener("DOMContentLoaded", function(){
+    showLatestBooking();
+    showBookingHistory();
+});
+
+function showToast(msg){
 
 let toast=document.getElementById("toast");
 
@@ -1022,6 +1397,21 @@ toast.style.display="none";
 },3000);
 
 }
+
+
+// Prevent users from selecting a past check-in date
+document.addEventListener("DOMContentLoaded", function(){
+  const today = new Date().toISOString().split("T")[0];
+  const inDate = document.getElementById("inDate");
+  const outDate = document.getElementById("outDate");
+
+  inDate.min = today;
+  outDate.min = today;
+
+  inDate.addEventListener("change", function(){
+    outDate.min = this.value || today;
+  });
+});
 
 </script>
 

@@ -1,0 +1,861 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>My Love ❤️</title>
+
+    <!-- Bootstrap -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Pacifico&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+    <style>
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background: #111;
+            font-family: 'Poppins', sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            overflow: hidden;
+        }
+
+        .mobile-frame {
+            width: 100%;
+            max-width: 430px;
+            height: 850px;
+            max-height: 95vh;
+            background: white;
+            border: 8px solid #222;
+            border-radius: 35px;
+            overflow: hidden;
+            box-shadow: 0 0 30px rgba(255, 0, 100, 0.4);
+        }
+
+        .screen {
+            width: 100%;
+            height: 100%;
+            overflow-y: auto;
+            scroll-behavior: smooth;
+        }
+
+        .section {
+            display: none;
+            min-height: 100%;
+            padding: 30px 20px;
+            text-align: center;
+        }
+
+        .section.active {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+
+
+        /* ================= HOME ================= */
+
+        #home {
+            background: linear-gradient(135deg, #db9dd8, #b647e9);
+        }
+
+        .main-photo {
+            width: 260px;
+            height: 330px;
+            object-fit: cover;
+            border-radius: 25px;
+            box-shadow: 0 10px 30px rgba(119, 0, 129, 0.25);
+            margin-bottom: 25px;
+            animation: photoFloat 3s ease-in-out infinite;
+        }
+
+        @keyframes photoFloat {
+            0%, 100% {
+                transform: translateY(0);
+            }
+
+            50% {
+                transform: translateY(-10px);
+            }
+        }
+
+        .home-title {
+            font-family: 'Pacifico', cursive;
+            color: #a00aa0;
+            font-size: 35px;
+            margin-bottom: 10px;
+        }
+
+        .home-text {
+            color: #a00aad;
+            font-size: 15px;
+            margin-bottom: 25px;
+        }
+
+
+        /* ================= BUTTON ================= */
+
+        .love-button {
+            border: none;
+            padding: 13px 28px;
+            border-radius: 30px;
+            background: #58026d;
+            color: white;
+            font-size: 16px;
+            box-shadow: 0 5px 15px rgba(182, 88, 201, 0.4);
+            transition: 0.3s;
+            cursor: pointer;
+        }
+
+        .love-button:hover {
+            transform: scale(1.05);
+            background: #8a0283;
+        }
+
+
+        /* ================= SECRET CODE ================= */
+
+        #secret {
+            background: linear-gradient(135deg, #c96fcc, #de42e4);
+        }
+
+        .lock {
+            font-size: 60px;
+            animation: pulse 1.5s infinite;
+        }
+
+        @keyframes pulse {
+            0% {
+                transform: scale(1);
+            }
+
+            50% {
+                transform: scale(1.15);
+            }
+
+            100% {
+                transform: scale(1);
+            }
+        }
+
+        .secret-title {
+            color: white;
+            font-size: 28px;
+            margin: 12px 0;
+        }
+
+        .secret-subtitle {
+            color: white;
+            font-size: 15px;
+            margin-bottom: 20px;
+        }
+
+        .secret-card {
+            width: 100%;
+            background: white;
+            padding: 25px 20px;
+            border-radius: 25px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+        }
+
+        .secret-card input {
+            width: 100%;
+            padding: 15px;
+            border: 2px solid #ffc1d1;
+            border-radius: 12px;
+            outline: none;
+            font-size: 16px;
+            text-align: center;
+            margin-bottom: 15px;
+        }
+
+        .secret-card input:focus {
+            border-color: #931db1;
+        }
+
+        .secret-card button {
+            width: 100%;
+            padding: 15px;
+            border: none;
+            border-radius: 30px;
+            background: linear-gradient(135deg, #8647c0, #420375);
+            color: white;
+            font-size: 16px;
+            font-weight: bold;
+            cursor: pointer;
+        }
+
+        #errorMessage {
+            color: #ca2a44;
+            margin-top: 12px;
+            font-size: 14px;
+        }
+
+        .secret-back {
+            margin-top: 18px;
+            border: none;
+            background: transparent;
+            color: white;
+            font-size: 14px;
+            cursor: pointer;
+        }
+
+
+        /* ================= LOVE LETTER ================= */
+
+        #letter {
+            background: linear-gradient(135deg, #fff0f5, #e28cf3);
+        }
+
+        .heart {
+            font-size: 55px;
+            animation: heartbeat 1.2s infinite;
+        }
+
+        @keyframes heartbeat {
+            0%, 100% {
+                transform: scale(1);
+            }
+
+            50% {
+                transform: scale(1.2);
+            }
+        }
+
+        .letter-title {
+            font-family: 'Pacifico', cursive;
+            color: #59056e;
+            font-size: 32px;
+            margin: 15px 0;
+        }
+
+        .letter-box {
+            width: 100%;
+            background: rgba(255, 255, 255, 0.8);
+            padding: 25px;
+            border-radius: 20px;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+            margin-bottom: 25px;
+        }
+
+        .letter-box p {
+            color: #bd2be2;
+            font-size: 15px;
+            line-height: 1.8;
+            text-align: left;
+        }
+
+        .back-button {
+            margin-top: 15px;
+            padding: 10px 22px;
+            border: none;
+            border-radius: 25px;
+            background: #c2185b;
+            color: white;
+            font-size: 14px;
+            cursor: pointer;
+        }
+
+        .back-button:hover {
+            background: #b806af;
+        }
+
+
+        /* ================= FINAL PAGE ================= */
+
+        #final {
+            background: linear-gradient(135deg, #bc8ccf, #6e057c);
+            color: white;
+        }
+
+        .final-title {
+            font-family: 'Pacifico', cursive;
+            font-size: 45px;
+            margin-bottom: 25px;
+            animation: loveZoom 2s infinite alternate;
+        }
+
+        @keyframes loveZoom {
+            from {
+                transform: scale(1);
+            }
+
+            to {
+                transform: scale(1.08);
+            }
+        }
+
+
+        /* ================= SLIDESHOW ================= */
+
+        .slideshow {
+            width: 280px;
+            height: 350px;
+            position: relative;
+            overflow: hidden;
+            border-radius: 25px;
+            border: 5px solid white;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+        }
+
+        .slide {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            position: absolute;
+            top: 0;
+            left: 0;
+            opacity: 0;
+            transition: opacity 1s ease-in-out;
+        }
+
+        .slide.active {
+            opacity: 1;
+        }
+
+
+        /* ================= FINAL MESSAGE ================= */
+
+        .final-message {
+            font-size: 16px;
+            line-height: 1.7;
+            margin: 20px 0;
+        }
+
+
+        /* ================= MUSIC ================= */
+
+        .music-button {
+            border: none;
+            padding: 13px 28px;
+            border-radius: 30px;
+            background: white;
+            color: #7c1974;
+            font-size: 16px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+
+        .music-button:hover {
+            transform: scale(1.05);
+        }
+
+
+        /* ================= HOME BUTTON ================= */
+
+        .home-button {
+            margin-top: 15px;
+            border: none;
+            padding: 10px 22px;
+            border-radius: 25px;
+            background: #ba04f1;
+            color: white;
+            font-size: 14px;
+            cursor: pointer;
+        }
+
+        .home-button:hover {
+            background: #440426;
+        }
+
+
+        /* ================= FLOATING HEARTS ================= */
+
+        .floating-heart {
+            position: fixed;
+            bottom: -20px;
+            font-size: 20px;
+            animation: floatHeart 5s linear forwards;
+            pointer-events: none;
+            z-index: 10;
+        }
+
+        @keyframes floatHeart {
+
+            0% {
+                transform: translateY(0);
+                opacity: 1;
+            }
+
+            100% {
+                transform: translateY(-100vh);
+                opacity: 0;
+            }
+
+        }
+
+
+        /* ================= MOBILE ================= */
+
+        @media (max-width: 450px) {
+
+            .mobile-frame {
+                max-height: 100vh;
+                height: 100vh;
+                border-radius: 0;
+                border: none;
+            }
+
+            .final-title {
+                font-size: 40px;
+            }
+
+            .slideshow {
+                width: 260px;
+                height: 330px;
+            }
+
+        }
+
+    </style>
+</head>
+
+<body>
+
+<div class="mobile-frame">
+
+    <div class="screen">
+
+
+        <!-- ================= HOME ================= -->
+
+        <section id="home" class="section active">
+
+            <img src="p6.jpeg"
+                 class="main-photo"
+                 alt="Our Photo">
+
+            <h1 class="home-title">
+                For My Thangapullaiii 🧿🫂🪄🐣
+            </h1>
+
+            <p class="home-text">
+                There is something special waiting for you Mama....
+            </p>
+
+            <button class="love-button"
+                    onclick="showSection('secret')">
+
+                Open My Heart 💋🪄🐣
+
+            </button>
+
+        </section>
+
+
+        <!-- ================= SECRET CODE ================= -->
+
+        <section id="secret" class="section">
+
+            <div class="lock">
+                🔐
+            </div>
+
+            <h1 class="secret-title">
+                Something Special For You ❤️
+            </h1>
+
+            <p class="secret-subtitle">
+                Mama ne ennaku atikati sollura word ennathu?
+                Correct ah sonna next page Pokum... 💕
+            </p>
+
+            <div class="secret-card">
+
+                <input
+                    type="password"
+                    id="secretCode"
+                    placeholder="Enter secret code"
+                    onkeypress="handleEnter(event)"
+                >
+
+                <button onclick="openLetter()">
+                    💖 Unlock My Letter
+                </button>
+
+                <p id="errorMessage"></p>
+
+            </div>
+
+            <button class="secret-back"
+                    onclick="showSection('home')">
+
+                ← Back to Home
+
+            </button>
+
+        </section>
+
+
+        <!-- ================= LOVE LETTER ================= -->
+
+        <section id="letter" class="section">
+
+            <div class="heart">
+                🎀🧿🐣🪄
+            </div>
+
+            <h2 class="letter-title">
+                Mama ku Papa eluthuna Letter...💌
+            </h2>
+
+            <div class="letter-box">
+
+                <p>
+                    Mama💜🎀🧿
+                </p>
+
+                <p>
+                    Mama, nee en life-la kidaicha romba beautiful-aana gift 🎁💜.
+                    Un kooda pesura ovvoru moment-um enakku romba special
+                    🐣🪄🫂💋😘💜🧿🎀.
+                    Enakku happy-aa irundhaalum, sad-aa irundhaalum,
+                    mudhala nyabagam varradhu nee dhaan Mama💜🎀🧿.
+                    Un kooda irukkumbodhu time eppadi pogudhune theriyadhu.
+                    Unna eppothum miss pannuvean.
+                    Unnoda irukkanum nu thonum eppothum.
+                    Love you Mama💜🎀🧿
+                </p>
+
+                <p>
+                    Nee en lover mattum illa...
+                    nee en best friend, en happiness, en peace,
+                    ennoda appa 🫂.
+                    And en life-la romba special person.
+                    Ellamey netha daa karuvayaa ❤️
+                </p>
+
+                <p>
+                    Namma life-la evlo problems vandhaalum,
+                    enna nadandhaalum, naan un kooda irupean Mama.
+                    Promise 🫂.
+                    Unna vida enakku vera yaarum mukkiyam illa.
+                </p>
+
+                <p>
+                    I love you Mama..! 🎀🫂💜😘💋🪄🐣❤️
+                    Unna inniku mattum illa...
+                    every day, every moment,
+                    konjam konjam-aa innum adhigama love pannitu iruppen. 💋
+                </p>
+
+                <p>
+                    Thank you for being my person,
+                    my happiness and my favourite part of life. 🫂❤️
+                </p>
+
+            </div>
+
+
+            <!-- GO TO FINAL -->
+
+            <button class="love-button"
+                    onclick="showSection('final')">
+
+                I Love You ❤️
+
+            </button>
+
+
+            <button class="back-button"
+                    onclick="showSection('secret')">
+
+                🔐 Back to Secret Code
+
+            </button>
+
+        </section>
+
+
+        <!-- ================= FINAL PAGE ================= -->
+
+        <section id="final" class="section">
+
+            <h1 class="final-title">
+                I LOVE YOU ❤️
+            </h1>
+
+
+            <!-- PHOTO SLIDESHOW -->
+
+            <div class="slideshow">
+
+                <img src="p1.jpeg"
+                     class="slide active"
+                     alt="Our Photo 1">
+
+                <img src="p2.jpeg"
+                     class="slide"
+                     alt="Our Photo 2">
+
+                <img src="p3.jpeg"
+                     class="slide"
+                     alt="Our Photo 3">
+
+                <img src="p4.jpeg"
+                     class="slide"
+                     alt="Our Photo 4">
+
+                <img src="p5.jpeg"
+                     class="slide"
+                     alt="Our Photo 5">
+
+            </div>
+
+
+            <!-- FINAL MESSAGE -->
+
+            <p class="final-message">
+
+                You are my happiness,
+                my favourite person,
+                and the most special part of my life. 💕
+
+                <br><br>
+
+                Forever and always... ❤️
+                <br>
+                Love You Mama 🪄💋😘💜🫂🎀🐣🧿
+
+            </p>
+
+
+            <!-- SONG -->
+
+            <audio id="loveSong" loop>
+
+                <source src="song.mp3"
+                        type="audio/mpeg">
+
+            </audio>
+
+
+            <button class="music-button"
+                    onclick="playSong()">
+
+                🎵 Play Our Song
+
+            </button>
+
+
+            <!-- BACK HOME -->
+
+            <button class="home-button"
+                    onclick="showSection('home')">
+
+                🏠 Back to Home
+
+            </button>
+
+        </section>
+
+
+    </div>
+
+</div>
+
+
+<script>
+
+
+    /* ================= CHANGE SECTION ================= */
+
+    function showSection(sectionId) {
+
+        document.querySelectorAll(".section").forEach(function(section) {
+
+            section.classList.remove("active");
+
+        });
+
+        document.getElementById(sectionId).classList.add("active");
+
+        document.querySelector(".screen").scrollTop = 0;
+
+        createHearts();
+
+        if (sectionId === "final") {
+
+            startSlideshow();
+
+        }
+
+    }
+
+
+    /* ================= SECRET CODE ================= */
+
+    function openLetter() {
+
+        const codeInput = document.getElementById("secretCode");
+
+        const errorMessage = document.getElementById("errorMessage");
+
+        const code = codeInput.value.trim();
+
+        const correctCode = "love you papa";
+
+
+        if (code === correctCode) {
+
+            errorMessage.innerText = "";
+
+            codeInput.value = "";
+
+            showSection("letter");
+
+        } else {
+
+            errorMessage.innerText =
+                "Wrong secret code 💔 thirumpa try pannu mama enna solluvanu maranthudiya...🥺";
+
+            codeInput.value = "";
+
+            codeInput.focus();
+
+        }
+
+    }
+
+
+    /* ================= ENTER KEY ================= */
+
+    function handleEnter(event) {
+
+        if (event.key === "Enter") {
+
+            openLetter();
+
+        }
+
+    }
+
+
+    /* ================= PHOTO SLIDESHOW ================= */
+
+    let slides = document.querySelectorAll(".slide");
+
+    let currentSlide = 0;
+
+    let slideshowStarted = false;
+
+
+    function startSlideshow() {
+
+        if (slideshowStarted) {
+
+            return;
+
+        }
+
+        slideshowStarted = true;
+
+
+        setInterval(function() {
+
+            slides[currentSlide].classList.remove("active");
+
+            currentSlide++;
+
+
+            if (currentSlide >= slides.length) {
+
+                currentSlide = 0;
+
+            }
+
+
+            slides[currentSlide].classList.add("active");
+
+        }, 3000);
+
+    }
+
+
+    /* ================= PLAY SONG ================= */
+
+    function playSong() {
+
+        let song = document.getElementById("loveSong");
+
+        let button = document.querySelector(".music-button");
+
+
+        if (song.paused) {
+
+            song.play().then(function() {
+
+                button.innerHTML =
+                    "⏸️ Pause Our Song";
+
+            }).catch(function() {
+
+                alert("Please check your love-song.mp3 file ❤️");
+
+            });
+
+        }
+
+        else {
+
+            song.pause();
+
+            button.innerHTML =
+                "🎵 Play Our Song";
+
+        }
+
+    }
+
+
+    /* ================= FLOATING HEARTS ================= */
+
+    function createHearts() {
+
+        for (let i = 0; i < 8; i++) {
+
+            let heart =
+                document.createElement("div");
+
+            heart.className =
+                "floating-heart";
+
+            heart.innerHTML =
+                "❤️";
+
+            heart.style.left =
+                Math.random() * 100 + "%";
+
+            heart.style.animationDuration =
+                (3 + Math.random() * 3) + "s";
+
+            document.body.appendChild(heart);
+
+
+            setTimeout(function() {
+
+                heart.remove();
+
+            }, 6000);
+
+        }
+
+    }
+
+
+</script>
+
+</body>
+</html>
