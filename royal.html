@@ -546,6 +546,308 @@ body{padding-top:85px;}
     }
 }
 
+
+
+/* FINAL MOBILE + BOOKING FIXES */
+html, body{
+    width:100%;
+    max-width:100%;
+    overflow-x:hidden;
+}
+.page{
+    width:100%;
+    max-width:100%;
+}
+.container{
+    width:100%;
+}
+.row{
+    margin-left:0;
+    margin-right:0;
+}
+#booking{
+    padding-top:20px;
+    padding-bottom:30px;
+}
+#bookingForm{
+    width:100%;
+    max-width:700px;
+    margin:0 auto;
+    overflow:hidden;
+}
+#bookingAlert,
+#result,
+#latestBooking,
+#bookingHistory{
+    width:100%;
+    max-width:700px;
+    margin-left:auto;
+    margin-right:auto;
+}
+.booking-confirmation,
+.booking-history,
+#latestBooking .alert{
+    overflow-wrap:anywhere;
+    word-break:break-word;
+}
+@media(max-width:576px){
+    .container{
+        padding-left:15px;
+        padding-right:15px;
+    }
+    .page.container{
+        padding-left:15px;
+        padding-right:15px;
+    }
+    #booking{
+        padding-left:10px;
+        padding-right:10px;
+        padding-top:15px;
+    }
+    #bookingForm{
+        padding:18px 14px !important;
+    }
+    #bookingForm label{
+        font-size:14px;
+    }
+    #bookingForm input,
+    #bookingForm select,
+    #bookingForm button{
+        width:100%;
+        min-width:0;
+        font-size:16px;
+    }
+    #booking h2{
+        font-size:26px !important;
+        margin-bottom:18px;
+    }
+    .booking-confirmation,
+    .booking-history,
+    #latestBooking .alert,
+    #bookingAlert .alert{
+        width:100%;
+        padding:15px;
+    }
+    .hero{
+        width:100%;
+    }
+    .room-card,
+    .facility-card,
+    .contact-card{
+        margin-left:0;
+        margin-right:0;
+    }
+    footer{
+        width:100%;
+        overflow:hidden;
+    }
+}
+
+
+/* ===== FINAL MOBILE HAMBURGER + BOOKING NOTIFICATION FIX ===== */
+@media (max-width:576px){
+    html,body{
+        width:100%;
+        max-width:100%;
+        overflow-x:hidden !important;
+    }
+
+    body{
+        padding-top:76px !important;
+    }
+
+    .header{
+        width:100%;
+        max-width:100%;
+        height:76px;
+        overflow:visible;
+    }
+
+    .header-top{
+        height:76px !important;
+        min-height:76px !important;
+        width:100%;
+        padding:0 58px 0 12px !important;
+    }
+
+    .logo-box{
+        position:absolute;
+        left:10px !important;
+        top:12px !important;
+    }
+
+    .logo{
+        width:50px !important;
+        height:50px !important;
+    }
+
+    .hotel-name{
+        width:100%;
+        padding:0 !important;
+        margin:0 !important;
+    }
+
+    .hotel-name h1{
+        font-size:18px !important;
+        line-height:1.2 !important;
+        letter-spacing:.5px !important;
+        padding:0 !important;
+        margin:0 !important;
+        white-space:normal;
+    }
+
+    .menu-toggle{
+        display:flex !important;
+        align-items:center;
+        justify-content:center;
+        position:absolute !important;
+        right:10px !important;
+        top:17px !important;
+        width:44px;
+        height:44px;
+        padding:0;
+        margin:0;
+        border-radius:8px;
+        color:#fff;
+        background:#29485d;
+        font-size:26px;
+        line-height:1;
+        z-index:1200;
+    }
+
+    .menu-toggle:focus{
+        outline:2px solid #ffd700;
+        outline-offset:2px;
+    }
+
+    .menu-bar{
+        display:none !important;
+        position:absolute !important;
+        top:76px !important;
+        left:0 !important;
+        right:0 !important;
+        width:100% !important;
+        max-height:calc(100vh - 76px);
+        overflow-y:auto;
+        overflow-x:hidden;
+        padding:8px 12px 12px !important;
+        margin:0 !important;
+        background:#29485d !important;
+        flex-direction:column !important;
+        align-items:stretch !important;
+        justify-content:flex-start !important;
+        gap:2px !important;
+        box-shadow:0 8px 20px rgba(0,0,0,.35);
+        z-index:1150;
+    }
+
+    .menu-bar.show{
+        display:flex !important;
+    }
+
+    .menu-bar a{
+        display:block !important;
+        width:100% !important;
+        min-height:44px;
+        padding:11px 12px !important;
+        margin:0 !important;
+        border-radius:7px;
+        border-bottom:1px solid rgba(255,255,255,.12);
+        color:#fff !important;
+        text-align:center !important;
+        font-size:16px !important;
+        line-height:22px;
+        transform:none !important;
+    }
+
+    .menu-bar a:hover,
+    .menu-bar a:active{
+        color:#ffd700 !important;
+        background:rgba(255,255,255,.08);
+        transform:none !important;
+    }
+
+    /* Prevent cards and sections from becoming wider than the phone */
+    .page,
+    .container,
+    .container-fluid,
+    section,
+    .row,
+    .col,
+    [class*="col-"]{
+        max-width:100%;
+    }
+
+    .row{
+        --bs-gutter-x:1rem;
+    }
+
+    img{
+        max-width:100% !important;
+        height:auto;
+    }
+
+    /* Booking notification */
+    #bookingAlert{
+        width:100% !important;
+        max-width:700px !important;
+        margin:16px auto 0 !important;
+        padding:0 !important;
+    }
+
+    .booking-success-notification{
+        width:100% !important;
+        max-width:100% !important;
+        margin:0 !important;
+        padding:16px !important;
+        border-radius:12px !important;
+        overflow-wrap:anywhere;
+        word-break:break-word;
+    }
+
+    .booking-success-notification h5{
+        font-size:20px !important;
+    }
+
+    .booking-success-notification p{
+        font-size:14px !important;
+    }
+
+    .booking-details{
+        font-size:14px !important;
+        line-height:1.8 !important;
+    }
+
+    .booking-details div{
+        border-bottom:1px solid rgba(0,0,0,.08);
+        padding:3px 0;
+    }
+
+    .booking-details div:last-child{
+        border-bottom:0;
+    }
+
+    #bookingForm{
+        width:100% !important;
+        max-width:100% !important;
+        margin:0 auto !important;
+    }
+
+    #bookingForm input,
+    #bookingForm select,
+    #bookingForm textarea,
+    #bookingForm button{
+        max-width:100% !important;
+        box-sizing:border-box !important;
+    }
+}
+
+@media (min-width:577px){
+    .menu-toggle{
+        display:none !important;
+    }
+}
+
 </style>
 </head>
 
@@ -561,7 +863,7 @@ body{padding-top:85px;}
         </div>
 
         <div class="hotel-name">
-            <h1>🌟ROYAL STAY HOTEL🌟</h1>
+            <h1>ROYAL STAY HOTEL</h1>
         </div>
     </div>
 
@@ -626,11 +928,7 @@ body{padding-top:85px;}
 
 </div>
 
-<a href="https://wa.me/919876543210?text=Hi%20I%20want%20to%20book%20a%20room%20at%20Royal%20Stay%20Hotel"
-class="whatsapp-btn"
-target="_blank">
-💬
-</a>
+
 
 <!-- ABOUT -->
 <div id="about" class="page container py-5">
@@ -919,12 +1217,12 @@ Book Now
 <input id="name" class="form-control mb-2" placeholder="Name" required minlength="2" maxlength="50">
 <label style="color:rgb(35, 15, 219);"> Availabe Rooms</label>
 <select id="room" class="form-select mb-2">
-<option value="1500">Standard room</option>
-<option value="2500">Deluxe room</option>
-<option value="4000">Family room</option>
-<option value="4000">Suite room</option>
-<option value="4000">Luxury room</option>
-<option value="4000">Single room</option>
+<option value="1200">Standard Room - ₹1200/night</option>
+<option value="2500">Deluxe Room - ₹2500/night</option>
+<option value="3200">Family Room - ₹3200/night</option>
+<option value="4500">Suite Room - ₹4500/night</option>
+<option value="5000">Premium Room - ₹5000/night</option>
+<option value="900">Single Room - ₹900/night</option>
 </select>
 
 <label style="color:rgb(35, 15, 219);">Check-in Date</label><input id="inDate" type="date" class="form-control mb-2" required>
@@ -955,10 +1253,11 @@ Book Now
 <label style="color:rgb(35, 15, 219);">Address</label>
 <input id="address" class="form-control mb-2" placeholder="Enter address" required minlength="5" maxlength="150">
 
-<button class="btn btn-primary w-100">Book Now</button>
+<button type="submit" class="btn btn-primary w-100">Book Now</button>
 
 </form>
 
+<div id="bookingAlert" class="mt-3"></div>
 <div id="result" class="mt-3"></div>
 <div id="latestBooking" class="mt-3"></div>
 <div id="bookingHistory" class="mt-3"></div>
@@ -1259,25 +1558,30 @@ function book(e){
     submitBtn.disabled = true;
     submitBtn.innerHTML = "✓ Booking Confirmed";
 
-    document.getElementById("result").innerHTML =
-    `<div class="booking-confirmation mt-3 shadow-sm">
-        <div class="booking-id mb-2">✓ BOOKING CONFIRMED · ${bookingId}</div>
-        <h5 class="mb-3">Thank you, ${escapeHtml(name)}!</h5>
-        <div class="row g-2">
-            <div class="col-12 col-sm-6"><strong>Room:</strong> ${escapeHtml(roomName)}</div>
-            <div class="col-12 col-sm-6"><strong>Guests:</strong> ${members}</div>
-            <div class="col-12 col-sm-6"><strong>Check-in:</strong> ${inDate}</div>
-            <div class="col-12 col-sm-6"><strong>Check-out:</strong> ${outDate}</div>
-            <div class="col-12 col-sm-6"><strong>Nights:</strong> ${days}</div>
-            <div class="col-12 col-sm-6"><strong>Total:</strong> ₹${total}</div>
-        </div>
-        <hr>
-        <small class="text-muted">Your booking has been saved on this device.</small>
-    </div>`;
+    /* Show ONE booking notification with all submitted details */
+    document.getElementById("result").innerHTML = "";
+    document.getElementById("latestBooking").innerHTML = "";
+    document.getElementById("bookingHistory").innerHTML = "";
 
-    showLatestBooking();
-    showBookingHistory();
-    showToast("🎉 Booking " + bookingId + " saved successfully!");
+    document.getElementById("bookingAlert").innerHTML =
+    `<div class="alert alert-success booking-success-notification shadow-sm mt-3" role="alert">
+        <h5 class="mb-3">✅ Booking Successful!</h5>
+        <p class="mb-3">Your room has been booked successfully.</p>
+        <div class="booking-details text-start">
+            <div><strong>Guest Name:</strong> ${escapeHtml(name)}</div>
+            <div><strong>Room:</strong> ${escapeHtml(roomName)}</div>
+            <div><strong>Check-in:</strong> ${inDate}</div>
+            <div><strong>Check-out:</strong> ${outDate}</div>
+            <div><strong>Members:</strong> ${members}</div>
+            <div><strong>Phone:</strong> ${escapeHtml(phone)}</div>
+            <div><strong>Email:</strong> ${escapeHtml(email)}</div>
+            <div><strong>Address:</strong> ${escapeHtml(address)}</div>
+            <div><strong>Nights:</strong> ${days}</div>
+            <div><strong>Total Amount:</strong> ₹${total}</div>
+            <div><strong>Booking ID:</strong> ${bookingId}</div>
+        </div>
+    </div>
+    `;
 
     form.reset();
 
@@ -1301,6 +1605,7 @@ function book(e){
 
 function showBookingAlert(type, message){
     const box = document.getElementById("bookingAlert");
+    if(!box) return;
     box.innerHTML = `<div class="alert alert-${type}" role="alert">${message}</div>`;
     setTimeout(function(){
         box.innerHTML = "";
@@ -1401,7 +1706,11 @@ toast.style.display="none";
 
 // Prevent users from selecting a past check-in date
 document.addEventListener("DOMContentLoaded", function(){
-  const today = new Date().toISOString().split("T")[0];
+  const now = new Date();
+  const localYear = now.getFullYear();
+  const localMonth = String(now.getMonth() + 1).padStart(2, "0");
+  const localDay = String(now.getDate()).padStart(2, "0");
+  const today = `${localYear}-${localMonth}-${localDay}`;
   const inDate = document.getElementById("inDate");
   const outDate = document.getElementById("outDate");
 
@@ -1411,6 +1720,37 @@ document.addEventListener("DOMContentLoaded", function(){
   inDate.addEventListener("change", function(){
     outDate.min = this.value || today;
   });
+});
+
+
+/* ===== FINAL HAMBURGER BEHAVIOUR ===== */
+document.addEventListener("click", function(event){
+    const menu = document.getElementById("mainMenu");
+    const button = document.querySelector(".menu-toggle");
+    if(!menu || !button) return;
+
+    if(window.innerWidth <= 576 &&
+       menu.classList.contains("show") &&
+       !menu.contains(event.target) &&
+       !button.contains(event.target)){
+        menu.classList.remove("show");
+        button.setAttribute("aria-expanded","false");
+        button.setAttribute("aria-label","Open navigation menu");
+        button.innerHTML="☰";
+    }
+});
+
+window.addEventListener("resize", function(){
+    const menu = document.getElementById("mainMenu");
+    const button = document.querySelector(".menu-toggle");
+    if(!menu || !button) return;
+
+    if(window.innerWidth > 576){
+        menu.classList.remove("show");
+        button.setAttribute("aria-expanded","false");
+        button.setAttribute("aria-label","Open navigation menu");
+        button.innerHTML="☰";
+    }
 });
 
 </script>
